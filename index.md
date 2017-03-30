@@ -24,4 +24,4 @@ We use the Finite Difference Method as scheme and JAVA Threads to do parallel co
 
 The objective is to simulate the phenomenon of slow light and forbidden frequency by solving Bloch spectral cell equations and wave equations.
 
-We use the Finite Element Method as scheme with the help of [Gauss-Legendre quadrature](https://en.wikipedia.org/wiki/Gaussian_quadrature).
+We use the Finite Element Method as scheme with the help of Gauss-Legendre quadrature.
