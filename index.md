@@ -1,6 +1,5 @@
 ---
 layout: default
-math: true
 ---
 
 # Hello World
@@ -20,6 +19,8 @@ The objective is to simulate the propagation of the acoustic waves engendered by
 
 We use the Finite Difference Method as scheme and JAVA Threads to do parallel computing.
 
+[More details](2A-INF431-Project)
+
 ### Phenomenon of slow light and forbidden frequency
 
 > Part of Scientific Collective Project of the second year at École Polytechnique
@@ -29,3 +30,5 @@ We use the Finite Difference Method as scheme and JAVA Threads to do parallel co
 The objective is to simulate the phenomenon of slow light and forbidden frequency by solving Bloch spectral cell equations and wave equations.
 
 We use the Finite Element Method as scheme with the help of Gauss-Legendre quadrature.
+
+[More details](2A-PSC-SlowLight)
