@@ -13,7 +13,7 @@ And the construction of the site is still in process :)
 
 > Project of the course "INF431 : Concurrency" at École Polytechnique
 
-<img src="SeismogramSnapshots.gif" alt="SeismogramSnapshots" width="300">
+<img src="Snapshots.gif" alt="Snapshots" width="300">
 
 The objective is to simulate the propagation of the acoustic waves engendered by an explosion of a bomb which is equivalent to solve an acoustic wave equation.
 
