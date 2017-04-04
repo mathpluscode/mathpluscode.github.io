@@ -73,17 +73,17 @@ To calculate the solution with parallelism, we divide the Area into 8 SubAreas :
 | SubArea 0 | SubArea 1 | SubArea 2 | SubArea 3 |
 | SubArea 4 | SubArea 5 | SubArea 6 | SubArea 7 |
 
-So each SubArea does the calculation locally. But from the finite difference method, we can find that in order to calculate $$u^{n+1}$$ in one SubArea, we need $$u^{n}$$ and $$u^{n-1}$$ in this SubArea as well as $$u^{n}$$ in its neighbors or some boundary conditions.
+So each SubArea does the calculation locally. But from the finite difference method, we can find that in order to calculate $$u^{n+1}$$ at one point, we need $$u^{n}$$ and $$u^{n-1}$$ at the same point as well as $$u^{n}$$ in its neighbors or some boundary conditions.
 
 That's why we build the four following class which allow an efficient parallel calculation :
 
 1. Area
 
-    Area contains the main function who initializes and launches the threads. we define all the parameters here.
+    Area contains the main function who initializes and launches the threads. We define all the parameters here as well as the functions to calculate the source $$S(t,\mathbf{x})$$.
 
 2. SubArea
 
-    SubArea is derived from Thread and it calculates the solution in its own subarea.
+    SubArea is derived from Thread and it calculates the solution in its own subarea. It uses Barrier to control the progress of threads.
 
 3. UList
 
@@ -95,11 +95,31 @@ That's why we build the four following class which allow an efficient parallel c
 
 To sum up, the process of the calculation is :
 
-1. Area initializes and lauched a list of SubArea which is derived from Thread.
+`Area`
 
-2. Each SubArea use a for loop to calculate the solution with the help of UList and Barrier. UList allows the communication between threads and Barrier guarantees the synchronization of threads.
+1. Define the parameters of equation and of parallelism
 
-[GitHub Repository](https://github.com/mathpluscode/2A-INF431-Project)
+2. Open the files where we stock the snapshots and seismograms
+
+3. Initialize `UList u0, u1` with zero
+
+4. Initialize and launch the instances of `SubArea`
+
+    Each `SubArea` use a for loop to :
+
+    1. Calculate $$u^{n+1}$$ from `u0, u1` which represent $$u^{n-1}$$, $$u^n$$
+
+    2. Use `Barrier` to synchronize
+
+    3. Store the snapshots and seismograms
+
+    4. Update the references in `u0, u1`
+
+    5. Use `Barrier` to synchronize
+
+5. Wait all threads
+
+6. Close the files
 
 ## Experience
 
@@ -110,13 +130,15 @@ $$\mathbf{x}=(x,z)\in[0,1000]\times[0,500]$$
 The area is heterogeneous and the speed of sound is defined as :
 
 $$c(z) = \begin{cases}
-		1000 & z \in [0,250]\\
-		2000 & z \in (250,500]
-		\end{cases}$$
+        1000 & z \in [0,250]\\
+        2000 & z \in (250,500]
+        \end{cases}$$
 
 The bomb explodes at $$\mathbf{x}_s=(x,z)=(500,50)$$ and the parameters of its signature are $$A=1,f_c=15,T_s=0.2$$.
 
 The time step is $$\Delta t=0.0002$$ and the space step is $$h=2$$.
+
+With this setting, the code takes about 28 seconds to calculate until $$t=1$$ over a computer with CPU i7-5500U @ 2.40 GHz.
 
 ### Snapshots
 
@@ -147,3 +169,7 @@ In the future, we can
 - etc.
 
 At last, I'd like to thank my friend Kevin for his kind cooperation in this project.
+
+## Code
+
+[GitHub Repository](https://github.com/mathpluscode/2A-INF431-Project)
