@@ -9,6 +9,15 @@ And the construction of the site is still in process :)
 
 # Projects
 
+### NVIDIA® Jetson™ TX2 Developer Kit
+[More details](Jetson-TX2)
+
+### Lotus effect and spinodal decomposition phenomenon
+Coming soon ...
+
+### Hacking the Paris metro
+Coming soon ...
+
 ### Underground explosion
 
 > Project of the course "INF431 : Concurrency" at École Polytechnique
