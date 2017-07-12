@@ -5,7 +5,7 @@ title: Underground explosion
 ---
 
 # Underground explosion
-> [Project](INF431-Subject.pdf) of the course "INF431 : Concurrency" at École Polytechnique
+> [Project](../doc/INF431-Project.pdf) of the course "INF431 : Concurrency" at École Polytechnique
 
 The objective of this project is to simulate the explosion of a bomb in a heterogeneous ground to study the propagation of the acoustic wave. And the programming language we use is JAVA.
 
@@ -144,7 +144,7 @@ With this setting, the code takes about 28 seconds to calculate until $$t=1$$ ov
 
 The snapshots of solution for $$t=0:0.02:0.6$$
 
-<img src="Snapshots.gif" alt="Snapshots" width="600">
+<img src="../doc/Snapshots.gif" alt="Snapshots" width="600">
 
 - From the gif above, we can see clearly the reflection of waves due to the Neumann boundary condition of the surface and the change of medium at $$z=250$$.
 
@@ -154,8 +154,8 @@ The snapshots of solution for $$t=0:0.02:0.6$$
 
 The seismograms for $$x=100$$ (left) and $$z=0$$ (right).
 
-<img src="SeismogramVertical.png" alt="SeismogramVertical" height="500">
-<img src="SeismogramSurface.png" alt="SeismogramSurface" height="500">
+<img src="../doc/SeismogramVertical.png" alt="SeismogramVertical" height="500">
+<img src="../doc/SeismogramSurface.png" alt="SeismogramSurface" height="500">
 
 ## Conclusion
 
