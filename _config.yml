@@ -3,3 +3,5 @@ title: MathPlusCode
 description: Keep learning and practicing :)
 show_downloads: false
 markdown: kramdown
+kramdown:
+  input:         GFM
