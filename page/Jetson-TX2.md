@@ -1,5 +1,6 @@
 ---
 layout: default
+title: Jetson TX2
 ---
 
 Recently, I bought the NVIDIA® Jetson™ TX2 Developer Kit for studying CUDA since my laptop doesn't have a Nvidia GPU. The process of installing the environment is quite tough so I'd like to write it down if never it can help someone else.

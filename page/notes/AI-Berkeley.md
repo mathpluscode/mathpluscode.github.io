@@ -1,7 +1,7 @@
 ---
 layout: default
 math: true
-title: Underground explosion
+title: Intro to AI
 ---
 
 # UC Berkeley CS188 Intro to AI

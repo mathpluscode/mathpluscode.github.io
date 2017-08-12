@@ -1,5 +1,6 @@
 ---
 layout: default
+title: MathPlusCode
 ---
 
 # Hello World
