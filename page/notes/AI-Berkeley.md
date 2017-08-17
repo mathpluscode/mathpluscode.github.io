@@ -175,7 +175,7 @@ Rational Preferences
 - Action $a$ in $A$
 - Transition function $T(s,a,s')$
     > i.e., Probability that a from s leads to $s'$, $P(s'\|s,a)$
-- Reward function $R(s,a,s’)$
+- Reward function $R(s,a,s')$
 - Start state
 - (Terminal state)
 
@@ -622,7 +622,7 @@ Why sampling ?
 
 > Fix evidence variables and sample the rest
 >
-> Evidence influences the choice of downstream variables, but not upstream ones (it isn’t more likely to get a value matching the evidence)
+> Evidence influences the choice of downstream variables, but not upstream ones (it isn't more likely to get a value matching the evidence)
 >
 > The weight can be very small and sum of weights over all samples is indicative of how many "effective" samples were obtained, so want high weight.
 
@@ -651,4 +651,61 @@ Why sampling ?
         > In fact, only CPTs that have resampled variable need to be considered, and joined together
 - Return $(x_1,\cdots,x_n)$
 
-# Notes until lecture 19
+## Value of Information
+> MEU = Maximum Expected Utility
+>
+> VPI = Value of Perfect Information
+
+- Assume we have evidence $E = e$, if we act now the value is:
+
+    $$\text{MEU}(e) = \max\limits_a \sum\limits_s P(s|e)U(s,a)$$
+
+    where $s$ is the parent of utility node and $a$ is the action.
+
+- Assume we now see that $E' = e'$, if we act then the value is
+
+    $$\text{MEU}(e,e') = \max\limits_a \sum\limits_s P(s|e,e')U(s,a)$$
+
+- BUT $E'$ is a random variable whose value is unknown, so we don't know what $e'$ will be.
+
+    If $E'$ is revealed and then we act:
+
+    $$\text{MEU}(e,E') = \sum\limits_{e'} P(e'|e)\text{MEU}(e,e')$$
+
+- So the value of information $E'$: how much MEU goes up by revealing E' first:
+
+    $$\text{VPI}(E'|e)=\text{MEU}(e,E')-\text{MEU}(e)$$
+
+### VPI Properties
+
+- Nonnegative
+
+    $$\forall E',e,\quad \text{VPI}(E'|e)\geq 0$$
+
+- Nonadditive
+    > i.e. if we observe a same evidence twice, VPI doesn't change
+
+    $$\text{VPI}(E_j,E_k|e)\neq \text{VPI}(E_j|e)+\text{VPI}(E_k|e)$$
+
+- Order-independent
+
+    $$\text{VPI}(E_j,E_k|e) = \text{VPI}(E_j|e)+\text{VPI}(E_k|e,E_j) = \text{VPI}(E_k|e)+\text{VPI}(E_j|e,E_k)$$
+
+- If the observed evidence is conditionally independent to the parents of utility given current evidences, then VPI = 0.
+
+<br>
+
+---
+
+# POMDP
+> Partially Observable Markov Decision Process
+> 
+> The agent cannot directly observe the underlying state.
+
+<br>
+
+---
+
+# Next
+
+# Notes until lecture 20
