@@ -11,7 +11,7 @@ title: Intro to AI
 
 ---
 
-## Search
+# Search
 
 - Search problem
     - a state space
@@ -48,7 +48,7 @@ title: Intro to AI
 
 ---
 
-## Constraint Satisfaction Problems
+# Constraint Satisfaction Problems
 
 - Search problem
     - Initial state
@@ -89,9 +89,9 @@ title: Intro to AI
 
 ---
 
-## Adversarial Search
+# Adversarial Search
 
-### Types
+## Types
 
 1. Zero-Sum Games
     > Agents have opposite utilities
@@ -99,7 +99,7 @@ title: Intro to AI
 2. General Games
     > Agents have independent utilities
 
-### Strategy
+## Strategy
 
 1. MiniMax avec Alpha-Beta Pruning
     
@@ -127,7 +127,7 @@ title: Intro to AI
         - If the next agent is MAX, return the max utility of its successors : max-value(state)
         - If the next agent is EXP, return the min utility of its successors : exp-value(state)
 
-### Utility
+## Utility
 > Utility Theorem [Ramsey, 1931; von Neumann & Morgenstern, 1944]
 
 Rational Preferences
@@ -155,7 +155,7 @@ Rational Preferences
 
 ---
 
-## Markov Decision Processes
+# Markov Decision Processes
 
 | Problem | Goal | Tech |
 | --- | --- | --- |
@@ -168,7 +168,7 @@ Rational Preferences
 
 
 
-### Markov Decision Processes
+## Markov Decision Processes
 > "Markov" generally means that given the present state, the future and the past are independent
 
 - State $s$ in $S$
@@ -179,7 +179,7 @@ Rational Preferences
 - Start state
 - (Terminal state)
 
-### Offline (T, R known)
+## Offline (T, R known)
 
 > state $s$ -> take action $a$ -> q-state $(s,a)$ -> transition $(s,a,s')$ -> state $s'$
 
@@ -209,7 +209,7 @@ Rational Preferences
 
         $$Q^*(s,a) = \sum_{s'} T(s,a,s') [R(s,a,s') + \gamma V^*(s')]$$
 
-Algo
+### Algo
 > Bellman updates
 
 1. Value Iteration
@@ -239,7 +239,7 @@ Algo
 
         $$\pi(s) = \arg\max_a Q(s,a) = \arg\max_a \sum_{s'} T(s,a,s') [R(s,a,s') + \gamma V(s')]$$
 
-### Reinforcement Learning (T or R unknown)
+## Reinforcement Learning (T or R unknown)
 
 - Learn an empirical MDP model
 - Solve the learned MDP
@@ -311,7 +311,7 @@ Algo
 
 ---
 
-## Probability
+# Probability
 
 - Bayes' Rule
     - $P(x,y) = P(x\|y) P(y) = P(y\|x) P(x)$
@@ -336,7 +336,7 @@ Algo
 
 ---
 
-## Hidden Markov Model
+# Hidden Markov Model
 
 ```
 X1 -> X2 -> X3 -> ...
@@ -352,7 +352,7 @@ $$P(X_1,E_1,...,X_T,E_T) = P(X_1)P(E_1|X_1) P(X_2|X_1)P(E_2|X_2) \cdots P(X_T|X_
 - Past variables independent of future variables given the present
     > if $t_1 < t_2 < t_3$ then $X_{t_1}$ is conditionally independent of $X_{t_3}$ given $X_{t_2}$
 
-### Forward Algorithm
+## Forward Algorithm
 > Track the distribution $B(X_t) = P_t(X_t\|e_{1:t})$ over time
 
 - Initialization:
@@ -371,7 +371,7 @@ Problem:
 
 - When $\|X\|$ is too big or when $X$ is continue, we can't store all $B(X)$
 
-### Viterbi Algorithm
+## Viterbi Algorithm
 > For responding queries like most likely explanation :
 > 
 > $$\arg\max_{x_{1:t}} P(x_{1:t} | e_{1:t})$$
@@ -380,7 +380,7 @@ Passage of time and observation: (use max instead of sum)
 
 $$P(X_{t+1}|e_{1:t},e_{t+1}) = P(e_{t+1}|X_{t+1}) \max_{x_t} P(X_{t+1}|x_t)P(x_t|e_{1:t})$$
 
-### Particle Filtering
+## Particle Filtering
 
 Use particles to present the probability distribution
 
@@ -409,7 +409,7 @@ Use particles to present the probability distribution
 
 ---
 
-## Dynamic Bayes Nets
+# Dynamic Bayes Nets
 
 <img src="../../fig/DynamicBayesNets.png" alt="DynamicBayesNets" height="200">
 
@@ -436,11 +436,11 @@ Use particles to present the probability distribution
 
 ---
 
-## Bayes Nets
+# Bayes Nets
 
 <img src="../../fig/BaysNets.png" alt="BaysNets" height="200">
 
-### Definitions
+## Definitions
 - A set of nodes, one per variable X
 
 - A directed, acyclic graph
@@ -452,6 +452,8 @@ Use particles to present the probability distribution
     This is equivalent to the following factorization definition:
 
     $$P(x_1,\cdots,x_n)=\prod_{i=1}^{n}P(x_i|\text{parents}(X_i))$$
+
+## Conditional Independence
 
 ### Causual Chains
 
@@ -503,7 +505,7 @@ A path is active if each triple is active (independence not guaranteed ).
 
 Given some graph topology G, the graph structure guarantees certain (conditional) independences and only certain joint distributions can be encoded.
 
-### Inference
+## Inference
 
 We want to know $P(Q\|e_1,\cdots,e_k)$
 
@@ -515,7 +517,7 @@ where all variables $X_1,\cdots,X_n$ can be divided into three types
 
 So $P(Q\|e_1,\cdots,e_k)=\sum\limits_{h_1,\cdots,h_r}P(Q\|h_1,\cdots,h_r,e_1,\cdots,e_k)$
 
-#### Example
+### Example
 ```
 R -> T -> L
 ```
@@ -538,7 +540,7 @@ We have $P(R), P(T\|R), P(L\|T)$ and we want to know $P(L)$
 
     1. $P(T),P(L\|T) \rightarrow P(T,L) \rightarrow P(L)$
 
-#### General Variable Elimination
+### General Variable Elimination
 
 $P(Q\|E_1=e_1,\cdots,E_k=e_k)$
 
@@ -554,7 +556,7 @@ $P(Q\|E_1=e_1,\cdots,E_k=e_k)$
 
 The elimination ordering can greatly affect the size of the largest factor. And for poly-trees (directed graph with no undirected cycles) we can always find an efficient ordering. For other graphs, we can try to choose a set of variables such that if removed only a polytree remains.
 
-#### General Example
+### General Example
 
 <img src="../../fig/BaysNetGeneralVariableEliminationExample.png" alt="GeneralVariableEliminationExample" height="150">
 
@@ -587,4 +589,66 @@ Given $P(B), P(E), P(A\|B,E), P(j\|A), P(m\|A)$, we want to know $P(B\|j,m)$
         
         $P(j,m,B) \rightarrow P(B\|j,m)$
 
-# Notes until lecture 18
+## Sampling
+
+Why sampling ?
+
+- Learning: get samples from a distribution we don't know
+- Inference: getting a sample is faster than computing the right answer
+
+### Prior Sampling
+
+- For $i=1:n$
+    
+    Sample $x_i$ from $P(X_i \| \text{Parents}(X_i))$
+
+- Return $(x_1,\cdots,x_n)$
+
+### Rejection Sampling
+
+> If there are evidences, we reject inconsistent samples.
+>
+> If evidence is unlikely, rejects lots of samples.
+
+- For $i=1:n$
+    
+    Sample $x_i$ from $P(X_i \| \text{Parents}(X_i))$
+
+    If $x_i$ is inconsistent with evidence, return and no sample is generated
+
+- Return $(x_1,\cdots,x_n)$
+
+### Likelihood Weighting
+
+> Fix evidence variables and sample the rest
+>
+> Evidence influences the choice of downstream variables, but not upstream ones (it isn’t more likely to get a value matching the evidence)
+>
+> The weight can be very small and sum of weights over all samples is indicative of how many "effective" samples were obtained, so want high weight.
+
+- $w=1$
+- For $i=1:n$
+    
+    - If $X_i = x_i$ is an evidence variable
+
+        $w = w \times P(x_i \| \text{Parents}(X_i))$
+    
+    - else
+
+        Sample $x_i$ from $P(X_i \| \text{Parents}(X_i))$
+
+- Return $(x_1,\cdots,x_n), w$
+
+### Gibbs Sampling
+
+> Gibbs sampling is a special case of more general methods called Markov chain Monte Carlo (MCMC) methods and Metropolis-Hastings is one of the more famous MCMC methods
+
+- Fix evidences
+- Initialize other variables randomly
+- Repeat several times
+    - Choose a non-evidence variable $X$ randomly
+    - Resample $X$ from $P( X \| \text{all other variables})$
+        > In fact, only CPTs that have resampled variable need to be considered, and joined together
+- Return $(x_1,\cdots,x_n)$
+
+# Notes until lecture 19
