@@ -411,12 +411,180 @@ Use particles to present the probability distribution
 
 ## Dynamic Bayes Nets
 
-<img src="../../doc/AI-Berkeley-DynamicBayesNets.png" alt="DynamicBayesNets" height="200">
+<img src="../../fig/DynamicBayesNets.png" alt="DynamicBayesNets" height="200">
 
 - Initialization
+
+    Generate prior samples for the t=1 Bayes net
+
 - Passage of time
+
+    Sample a successor for each particle
+
 - Observation
     - Downweight
+
+        Weight each *entire* sample by the liklyhood of the evidence conditioned on the sample
+
+        $$P(E_1^a|G_1^a)P(E_1^b|G_1^b)$$
+
     - Resample
 
-# Notes until lecture 15
+        Select prior samples (tuples of values) in proportion to their likelihood
+
+<br>
+
+---
+
+## Bayes Nets
+
+<img src="../../fig/BaysNets.png" alt="BaysNets" height="200">
+
+### Definitions
+- A set of nodes, one per variable X
+
+- A directed, acyclic graph
+
+- Local Markov property
+    
+    Each variable is conditionally independent of its non-descendants given its parent variables.
+
+    This is equivalent to the following factorization definition:
+
+    $$P(x_1,\cdots,x_n)=\prod_{i=1}^{n}P(x_i|\text{parents}(X_i))$$
+
+### Causual Chains
+
+```
+X -> Y -> Z
+```
+
+- X is not necessary independent of Z (active)
+- X is independent of Z given Y (inactive)
+    > Evidence along the chain "blocks" the influence
+
+### Common Cause
+
+```
+Y -> X
+  -> Z
+```
+- X is not necessary independent of Z (active)
+- X is independent of Z given Y (inactive)
+    > Observing the cause blocks influence between effects
+
+### Common Effect
+
+```
+X -> Z
+Y ->
+```
+
+- X and Y are independent (inactive)
+- X is not necessary independent of Y given Z (active)
+    > Observing an effect activates influence between possible causes
+
+```
+X -> P -> ... -> Z
+Y ->
+```
+
+- X is not necessary independent of Y given Z (active)
+
+### General case
+
+Are X and Y conditionally independent given evidence variables Z ?
+
+Consider all (undirected) paths from X to Y, if there is no active paths, then X and Y are conditionally independent ! If there is an active path, the independence is not guaranteed. (But it may be independent)
+
+A path is active if each triple is active (independence not guaranteed ).
+
+### Topology limits distributions
+
+Given some graph topology G, the graph structure guarantees certain (conditional) independences and only certain joint distributions can be encoded.
+
+### Inference
+
+We want to know $P(Q\|e_1,\cdots,e_k)$
+
+where all variables $X_1,\cdots,X_n$ can be divided into three types
+
+- Evidence variables $E_1,\cdots,E_k = e_1,\cdots,e_k$
+- Query variable $Q$
+- Hidden variables $H_1,\cdots,H_r$
+
+So $P(Q\|e_1,\cdots,e_k)=\sum\limits_{h_1,\cdots,h_r}P(Q\|h_1,\cdots,h_r,e_1,\cdots,e_k)$
+
+#### Example
+```
+R -> T -> L
+```
+
+We have $P(R), P(T\|R), P(L\|T)$ and we want to know $P(L)$
+
+- Inference by enumeration
+
+    $$P(L)=\sum\limits_t\sum\limits_r P(L|t)P(t|r)P(r)$$
+
+    1. $P(R), P(T\|R) \rightarrow P(R,T)$
+
+    1. $P(R,T),P(L\|T) \rightarrow P(R,T,L) \rightarrow P(L)$
+
+- Variable elimination
+
+    $$P(L)=\sum\limits_t P(L|t) \sum\limits_r P(t|r)P(r)$$
+
+    1. $P(R), P(T\|R) \rightarrow P(R,T) \rightarrow P(T)$
+
+    1. $P(T),P(L\|T) \rightarrow P(T,L) \rightarrow P(L)$
+
+#### General Variable Elimination
+
+$P(Q\|E_1=e_1,\cdots,E_k=e_k)$
+
+- Start with local CPTs (conditionaly probability table) which are instantiated by evidence
+
+- While there are still hidden variables (not query variable or evidence)
+
+    - Pick a hidden variable H
+    - Join all factors mentionubg H
+    - Eliminate (sum out) H
+
+- Join all remaining factors and normalize
+
+The elimination ordering can greatly affect the size of the largest factor. And for poly-trees (directed graph with no undirected cycles) we can always find an efficient ordering. For other graphs, we can try to choose a set of variables such that if removed only a polytree remains.
+
+#### General Example
+
+<img src="../../fig/BaysNetGeneralVariableEliminationExample.png" alt="GeneralVariableEliminationExample" height="150">
+
+Given $P(B), P(E), P(A\|B,E), P(j\|A), P(m\|A)$, we want to know $P(B\|j,m)$
+
+1. Choose A
+    - Join A
+    
+        $P(A\|B,E), P(j\|A), P(m\|A) \rightarrow P(j,m,A\|B,E)$
+
+    - Eliminate A
+    
+        $P(j,m,A\|B,E) \rightarrow P(j,m\|B,E)$
+
+1. Choose E
+    - Join E
+    
+        $P(E), P(j,m\|B,E) \rightarrow P(j,m,E\|B)$
+        
+    - Eliminate E
+        
+        $P(j,m,E\|B) \rightarrow P(j,m\|B)$
+
+1. Choose B
+    - Join B
+    
+        $P(B), P(j,m\|B) \rightarrow P(j,m,B)$
+        
+    - Normalize
+        
+        $P(j,m,B) \rightarrow P(B\|j,m)$
+
+# Notes until lecture 18

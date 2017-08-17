@@ -26,8 +26,8 @@ The objective is to do big data analysis by using the real data from RATP.
 ### Lotus effect and spinodal decomposition phenomenon
 > Project "MAP474C : Numerical Simulation of PDE" at École Polytechnique
 
-<img src="doc/LotusEffect-CassieBaxter.png" alt="Lotus Effect" height="200">
-<img src="doc/SpinodalDecomposition.png" alt="Spinodal Decomposition" height="200">
+<img src="fig/LotusEffect-CassieBaxter.png" alt="Lotus Effect" height="200">
+<img src="fig/SpinodalDecomposition.png" alt="Spinodal Decomposition" height="200">
 
 The objective is to use Finite Difference Method to study lotus effect and spinodal decomposition.
 
@@ -37,7 +37,7 @@ The objective is to use Finite Difference Method to study lotus effect and spino
 
 > Project of course "INF431 : Concurrency" at École Polytechnique
 
-<img src="doc/Snapshots.gif" alt="Snapshots" height="200">
+<img src="fig/Snapshots.gif" alt="Snapshots" height="200">
 
 The objective is to simulate the propagation of the acoustic waves engendered by an explosion of a bomb which is equivalent to solve an acoustic wave equation.
 
@@ -51,7 +51,7 @@ We use the Finite Difference Method as scheme and JAVA Threads to do parallel co
 >
 > Under the supervision of Prof. [ALLAIRE Grégoire](http://www.cmapx.polytechnique.fr/~allaire/GAUS.html)
 
-<img src="doc/Spectra.png" alt="Spectra" height="200">
+<img src="fig/Spectra.png" alt="Spectra" height="200">
 
 The objective is to simulate the phenomenon of slow light and forbidden frequency by solving Bloch spectral cell equations and wave equations.
 
