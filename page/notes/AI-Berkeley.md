@@ -706,6 +706,121 @@ Why sampling ?
 
 ---
 
-# Next
+# Naïve Bayes
+> Classification
 
-# Notes until lecture 20
+$$P(Y,F_1,\cdots,F_n)=P(Y)\prod\limits_iP(F_i|Y)$$
+
+The idea is that each feature depends on the class.
+
+To use Naïve Bayes, we need to calculate $P(Y\|f_1,\cdots,f_n)$ by using $P(y_k,f_1,\cdots,f_n)$.
+
+## Naïve Bayes for Text
+
+$$P(Y,W_1,\cdots,W_n)=P(Y)\prod\limits_iP(W_i|Y)$$
+
+Feature $W_i$ is the word at position $i$ and we assume that all positions share the same conditional probability $P(W\|Y)$
+
+To calculate a conditional probability $P(x\|y)$:
+
+- Maximum Likelihood:
+
+    $P(x\|y) = \frac{\text{count}(x,y)}{\text{count}(y)}$
+
+- Maximum Likelihood:
+
+    $P(x\|y) = \alpha \hat{P}(x\|y) + (1-\alpha) \hat{P}(x)$
+
+- Laplace Smoothing:
+
+    $P(x\|y) = \frac{\text{count}(x,y)+k}{\text{count}(y)+k\|X\|}$
+
+<br>
+
+---
+
+# Perceptrons
+
+## Linear, Oneclass
+
+Use $\text{sgn}(w^Tf(x))$ to classify instance
+
+- $w=0$
+- For each training instance
+    - $y=\text{sgn}(w^Tf(x))$
+    - If $y$ is not different from the exact label $y^*$
+
+        $w=w+y^*f(x)$
+
+## Linear, Multiclass
+
+There are different weights $w_y$ and we use $\arg\max\limits_y {w_y}^Tf(x)$ to classify instance
+
+- $w_y=0$ for all class
+- For each training instance
+    - $y=\arg\max\limits_y {w_y}^Tf(x)$
+    - If $y$ is not different from the exact label $y^*$
+
+        $w_{y}=w_{y}-f(x), \quad w_{y^\*}=w_{y^\*}+f(x)$
+
+## MIRA (Margin Infused Relaxed Algorithm)
+> To prevent overfitting
+
+Try to minimize the change to weight
+
+$$\min\limits_w \frac{1}{2}\sum\limits_y\|w_y-w_{y}'\|^2$$
+
+such that
+
+$$w_{y^*}^T f(x) \geq w_y^T f(x) + 1$$
+
+If we consider change like:
+
+$$w_{y}=w_{y}'-\gamma f(x), \quad w_{y^*}=w_{y^*}'+\gamma f(x)$$
+
+problem becomes:
+
+$$\min\limits_\gamma \|\gamma f(x)\|^2$$
+
+such that 
+
+$$(w_{y^*}'+\gamma f(x))^T f(x) \geq (w_y'-\gamma f(x))^T f(x) + 1$$
+
+and so
+
+$$\gamma = \frac{(w_y'-w_{y^*}')^T f(x)+1}{2f(x)^T f(x)}$$
+
+In practice, it's bad to make updates that are too large so we can cap the maximum possible value of $\gamma$ with some constant $C$:
+
+$$\gamma = \min(\gamma, C)$$
+
+## SVM (Support Vector Machines)
+
+<img src="../../fig/SVM.png" alt="DynamicBayesNets" height="200">
+
+$$\min\limits_w \frac{1}{2}\|w\|^2$$
+
+such that
+
+$$\forall i,y \quad w_{y^*}^T f(x_i) \geq w_y^T f(x_i) + 1$$
+
+The goal is to maximize the margin for all instances. Different from MIRA which optimize for an instance and try to minimize the size of change.
+
+This algorithm 
+(with kernel) can be used for online learning by using prime/dual problem.
+
+> Bordes, Antoine, et al. "Fast kernel classifiers with online and active learning." Journal of Machine Learning Research 6.Sep (2005): 1579-1619.
+
+## Kernel Trick
+
+For a perceptron, the weight is in fact a linear combination of features $f(x_i)$:
+
+$$w_y = \sum\limits_i \alpha_{i,y} f(x_i)$$
+
+So $w_y^T f(x) = \sum\limits_i \alpha_{i,y} f(x_i)^Tf(x) = \sum\limits_i \alpha_{i,y} K(x_i,x)$
+
+Kernels:
+- Linear Kernel: $K(x_1,x_2)=x_1^Tx_2$
+- Quadratic Kernel: $K(x_1,x_2)=(x_1^Tx_2+1)^2$
+- RBF: $K(x_1,x_2)=\exp(-\gamma\|x_1-x_2\|^2)$
+- Discrete Kernel: e.g. string kernel
