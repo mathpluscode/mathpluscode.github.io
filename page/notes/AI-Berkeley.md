@@ -796,7 +796,7 @@ $$\gamma = \min(\gamma, C)$$
 
 ## SVM (Support Vector Machines)
 
-<img src="../../fig/SVM.png" alt="DynamicBayesNets" height="200">
+<img src="../../fig/SVM.png" alt="SVM" height="200">
 
 $$\min\limits_w \frac{1}{2}\|w\|^2$$
 
