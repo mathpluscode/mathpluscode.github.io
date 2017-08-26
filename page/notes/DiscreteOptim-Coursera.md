@@ -219,8 +219,6 @@ The solution space is convex set and the optimal solution is at a vertex.
 
 #### Duality
 
-<img src="../../fig/Duality.png" alt="Duality" height="250">
-
 - Primal
 
     $$\begin{align*}
@@ -237,12 +235,30 @@ The solution space is convex set and the optimal solution is at a vertex.
     y\geq 0
     \end{align*}$$
 
-If the primal has an optimal solution, the dual has an optimal solution with the same cost:
+For this problem, if the primal has an optimal solution, the dual has an optimal solution with the same cost.
 
-$$c^Tx \geq y^TAx \geq y^Tb$$
+##### Exemple
 
-#### (General) Duality
+<img src="../../fig/Duality.png" alt="Duality" height="250">
+
+It can be interpreted as:
+
+The dual problem use the combination of constraints to find a lower bound of the primal problem.
+
+Why we use the dual problem ?
+
+If we have an optimal solution for the primal problem and we want to add a new constraint which makes the solution infeasible, but the dual is still feasible (we only need to add a dual varaible). Then we can solve the dual until the optimality and the solution becomes feasible for primal.
+
+Moreover, the primal/dual problem use the same matrix table to solve the problem.
+
+<br>
+
+---
+
+## Duality
 > Boyd, Stephen, and Lieven Vandenberghe. Convex optimization. Cambridge university press, 2004.
+
+### Primal problem
 
 We consider the following **primal problem**:
 
@@ -252,7 +268,9 @@ $$\begin{align*}
 h_i(x) &\leq 0,\quad i=1:p
 \end{align*}$$
 
-We can rewrite it as an unconstrainted problem
+### Dual problem
+
+We can rewrite the primal problem as an unconstrainted problem
 
 $$\begin{align*}
 \text{minimize}~f_0(x)+\sum\limits_{i=1}^mI_-(f_i(x))+\sum\limits_{i=1}^pI_0(h_i(x))
@@ -299,6 +317,8 @@ $$\begin{align*}
 
 This dual problem is a convex optimization because the objectif is the pointwise infimum of a family of affine functions and so it's concave. This is the case whether or not the primal problem is convex.
 
+### Weak/Strong duality
+
 Moreover, we can note that
 
 $$\begin{align*}
@@ -318,7 +338,7 @@ and by the definition of the dual problem, we can also express the optimal value
 
 $$d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v)$$
 
-So we have the weak dualityL
+So we have the **weak duality**:
 
 $$d^*\leq p^*$$
 
@@ -334,7 +354,65 @@ $$
 d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v) \leq \sup\limits_{\lambda\geq 0,v}L(x,\lambda,v) \leq \inf\limits_x\sup\limits_{\lambda\geq 0,v}L(x,\lambda,v)=p^*
 $$
 
-Book describes also a game interpretation and a price or tax interpretation to explain the meaning of **dual variables** $\lambda,v$.
+If
 
+$$d^*=p^*$$
+
+then we say that **strong duality** holds.
+
+### Interpretation
+
+Lagrange duality has an interesting economic interpretation.
+
+Suppose the variable $x$ denotes how an enterprise operates and $f_0(x) $ denotes the cost. Each constraint $f_i(x)\leq 0$ represents a limit on resources (e.g., warehouse space, labor). The operating condition that minimizes cost while respecting the limits can be found by solving the problem:
+
+$$\begin{align*}
+\text{minimize}~f_0(x)\\
+\text{s.t.}\quad f_i(x) &\leq 0,\quad i=1:m
+\end{align*}$$
+
+The resulting optimal cost is $p^*$.
+
+If now the limits can be violated by paying an additional cost which is linear in the amount of violation: $\lambda_if_i$. The coeffcient $\lambda_i$ has the interpretation of the price for violating $f_i(x)\leq 0$. We assume $\lambda_i \geq 0$, i.e. the firm must pay for violations and it receives income if a constraint is not tight.
+
+So the total cost to the firm, for operating condition $x$, and constraint prices $\lambda_i$, is:
+
+$$L(x,\lambda)=f_0(x)+\sum\limits_{i=1}^m \lambda_if_i(x)$$
+
+The firm will obviously operate so as to minimize its total cost $L(x,\lambda)$, which yields a cost $g(\lambda):=\inf\limits_x L(x,\lambda)$. The optimal dual value, $d^*=\sup\limits_{\lambda\geq 0}g(\lambda)$, is the optimal cost to the enterprise under the least favorable set of prices.
+
+$d^\*\leq p^\*$ since in the second scenario some income can be derived from the constraints that are not tight. And if strong duality holds, the $\lambda^\*$ is a set of prices for which there is no advantage to the firm in being allowed to pay for constraint violations or receive payments for nontight constraints. $\lambda^\*$ is sometimes called a set of shadow prices for the primal problem.
+
+### Slater's condition
+
+For the following problem:
+
+$$\begin{align*}
+\text{minimize}~f_0(x)\\
+\text{s.t.}\quad f_i(x) &\leq 0,\quad i=1:m\\
+Ax&=b
+\end{align*}$$
+
+If there exists an $x\in\text{relint}D$ with
+
+$$
+\begin{align*}
+f_i(x)\leq & 0,\quad i=1:k\\
+f_i(x)< & 0,\quad i=k+1:m\\
+Ax=&b
+\end{align*}
+$$
+
+where $D=\bigcap\limits_{i=1}^m\text{dom}~f_i$ and $f_i(x),i=1:k$ are affine,
+
+then the strong duality holds.
+
+#### Notations
+
+$$\text{relint}~C=\{x\in C| B(x,r) \cap \text{aff}~C\subset C~\text{for some}~r>0\}$$
+
+$$\text{aff}~C=\{\theta_1x_1+\cdots+\theta_kx_k|x_1,\cdots,x_k\in C,\theta_1+\cdots+\theta_k=1\}$$
+
+$$\text{aff}\{x\in\mathbb{R}^2|x_1^2+x_2^2=1\}=\mathbb{R}^2$$
 
 # Notes until LP5
