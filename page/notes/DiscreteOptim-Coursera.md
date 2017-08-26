@@ -241,4 +241,100 @@ If the primal has an optimal solution, the dual has an optimal solution with the
 
 $$c^Tx \geq y^TAx \geq y^Tb$$
 
+#### (General) Duality
+> Boyd, Stephen, and Lieven Vandenberghe. Convex optimization. Cambridge university press, 2004.
+
+We consider the following **primal problem**:
+
+$$\begin{align*}
+\text{minimize}~f_0(x)\\
+\text{s.t.}\quad f_i(x) &\leq 0,\quad i=1:m\\
+h_i(x) &\leq 0,\quad i=1:p
+\end{align*}$$
+
+We can rewrite it as an unconstrainted problem
+
+$$\begin{align*}
+\text{minimize}~f_0(x)+\sum\limits_{i=1}^mI_-(f_i(x))+\sum\limits_{i=1}^pI_0(h_i(x))
+\end{align*}$$
+
+where
+
+$$
+I_-(u)=\begin{cases}
+0 & u\leq 0\\
+\infty & u>0
+\end{cases}
+,\quad
+I_0(u)=\begin{cases}
+0 & u = 0\\
+\infty & u\neq 0
+\end{cases}
+$$
+
+These functions $I_-,I_0$ are used to express our displeasure associated with the constraint function value $f_i(x)$.
+
+And we can replace $I_-(u)$ with $\lambda_i u$ where $\lambda_i\geq 0$ and $I_0(u)$ with $v_i u$ where $v_i\in\mathbb{R}$.
+
+Since $\lambda_i u\leq I_-(u)$ and $v_i u \leq I_0(u)$, we have
+
+$$\begin{align*}
+L(x,\lambda,v) & :=
+f_0(x)+\sum\limits_{i=1}^m\lambda_i f_i(x)+\sum\limits_{i=1}^p v_i h_i(x)\\
+& \leq
+f_0(x)+\sum\limits_{i=1}^mI_-(f_i(x))+\sum\limits_{i=1}^pI_0(h_i(x))\\
+& \leq f_0(x)
+\end{align*}$$
+
+We define the **Lagrange dual function** $g(\lambda,v)$ as
+
+$$g(\lambda,v)=\inf\limits_x L(x,\lambda,v)$$
+
+and the **dual problem**:
+
+$$\begin{align*}
+\text{maximize}&\quad g(\lambda,v)\\
+\text{s.t.}&\quad \lambda_i \geq 0,\quad i=1:m
+\end{align*}$$
+
+This dual problem is a convex optimization because the objectif is the pointwise infimum of a family of affine functions and so it's concave. This is the case whether or not the primal problem is convex.
+
+Moreover, we can note that
+
+$$\begin{align*}
+\sup\limits_{\lambda\geq 0,v}L(x,\lambda,v) 
+&= \sup\limits_{\lambda\geq 0,v}(f_0(x)+\sum\limits_{i=1}^m\lambda_i f_i(x)+\sum\limits_{i=1}^p v_i h_i(x))\\
+&=\begin{cases}
+f_0(x) & f_i(x)\leq 0,~h_i(x)=0\\
+\infty & \text{else}
+\end{cases}
+\end{align*}$$
+
+So we can express the optimal value of the primal problem as
+
+$$p^*=\inf\limits_x \sup\limits_{\lambda\geq 0,v} L(x,\lambda,v)$$
+
+and by the definition of the dual problem, we can also express the optimal value of the dual problem as
+
+$$d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v)$$
+
+So we have the weak dualityL
+
+$$d^*\leq p^*$$
+
+because
+
+$$
+\forall \lambda\geq 0,v\quad \inf\limits_x L(x,\lambda,v) \leq L(x,\lambda,v)
+$$
+
+so
+
+$$
+d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v) \leq \sup\limits_{\lambda\geq 0,v}L(x,\lambda,v) \leq \inf\limits_x\sup\limits_{\lambda\geq 0,v}L(x,\lambda,v)=p^*
+$$
+
+Book describes also a game interpretation and a price or tax interpretation to explain the meaning of **dual variables** $\lambda,v$.
+
+
 # Notes until LP5
