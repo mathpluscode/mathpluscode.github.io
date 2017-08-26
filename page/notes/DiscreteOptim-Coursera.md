@@ -169,20 +169,31 @@ The solution space is convex set and the optimal solution is at a vertex.
     x_m &= b_m + \sum\limits_{i=m_1}^na_{mi}x_i
     \end{align*}$$
 
-    If we take $x_i=0$ for $i=m+1,\cdots,n$, then $x_i=b_i$ for $i=1,\cdots,m$
+    If we take $x_i=0$ for $i=m+1,\cdots,n$, then $x_i=b_i$ for $i=1,\cdots,m$.
 
-1. To move from a BFS to another, we choose
+    Here $x_i$ for $i=1:m$ are **basic variables** and $x_i$ for $i=m+1:n$ are non basic variables.
 
-    - An entering variable $x_e$ at right-hand side with $c_e<0$
-    - A leaving variable $x_l$ at left-hand side:
+1. To move from a BFS to a better one,
+
+    - Select an entering variable $x_e$ at right-hand side with $c_e<0$
+    - Select a leaving variable $x_l$ at left-hand side:
 
         $$l=\arg\min\limits_{i:a_{ie}<0}\frac{b_i}{-a_{ie}}$$
+    - Perform Gaussian elimination to eliminate basic variables
 
     If $c_e<0$ and all $a_{ie}\geq 0$, then we can increase $x_e$ arbitrarily to decrease the objective arbitrarily.
 
     If $b_i=0$, make $x_i$ leave do not change the objective.
 
     To assure the termination, we can select always the first possible entering variable.
+
+1. To detect whether a BFS is optimal
+
+    If after having eliminated all the basic variables, the objective function is of the form
+
+    $$c_0+c_1x_1+\cdots+c_nx_n$$
+
+    with $\forall i, ~c_i\geq 0$
 
 1. To find the first BFS, we can introduce artificial variables:
 
@@ -415,4 +426,140 @@ $$\text{aff}~C=\{\theta_1x_1+\cdots+\theta_kx_k|x_1,\cdots,x_k\in C,\theta_1+\cd
 
 $$\text{aff}\{x\in\mathbb{R}^2|x_1^2+x_2^2=1\}=\mathbb{R}^2$$
 
-# Notes until LP5
+<br>
+
+---
+
+## Mixed Integer Programming
+> Some variables have to be integers
+
+$$\begin{align*}
+\min~c_1x_1+\cdots&+c_nx_n\\
+a_{11}x_1+\cdots&+a_{1n}x_n= b_1\\
+\cdots&\\
+a_{m1}x_1+\cdots&+a_{mn}x_n= b_m\\
+x_i\geq& 0\\
+x_i\in& \mathbb{N}~(i\in I)
+\end{align*}$$
+
+Integer variables are typically 0/1 varaibles.
+
+### Branch and bound
+
+Solve the linear relaxation
+
+- If the linear relaxation is worse than the best solution found so far
+
+    Prune this node
+
+- Else if the linear relaxation is integral
+
+    We find a feasible solution and update the best feasible solution if appropriate
+
+- Otherwise, the solution is infeasible
+
+    - Find an integer variable $x$ that has a fractional value $f$
+    
+    - Crearte two subproblems $x\leq \lfloor f\rfloor$ and $x\geq \lceil f\rceil$
+
+    - Repeat the algorithm on the subproblems
+
+### Big M Transformation
+
+A constraint that two integers $x,y$ are different is $x\neq y$ which is equivalent to
+
+$$x\leq y-1 \text{or} x\geq y+1$$
+
+Since the disjunction is not allowed in a MIP model, we can introduce a 0/1 variable $b$ and a large number $M$
+
+$$
+\begin{align*}
+x\leq&~ y -1+bM\\
+x\geq&~ y+1-(1-b)M
+\end{align*}
+$$
+
+But the linear relaxation will choose $b=0.5$
+
+### Gomory Cut
+
+The idea is to add a linear constraint that:
+
+- is valid: it doesn't remove any feasible solution
+- helps: it cuts the optimal solution of the linear relaxation
+
+For example, we have the following constraint and $b_1$ is fractional:
+
+$$x_1+\sum\limits_{j=m+1}a_{1j}x_j=b_1$$
+
+Since $\sum\limits_{j=m+1}\lfloor a_{1j}\rfloor x_j \leq \sum\limits_{j=m+1}a_{1j}x_j$
+
+$$x_1+\sum\limits_{j=m+1}\lfloor a_{1j}\rfloor x_j\leq b_1$$
+
+Since the left hand-side is an integer
+
+$$x_1+\sum\limits_{j=m+1}\lfloor a_{1j}\rfloor x_j\leq \lfloor b_1 \rfloor$$
+
+So
+
+$$\sum\limits_{j=m+1}(a_{ij}-\lfloor a_{1j}\rfloor) x_j\geq b_1 - \lfloor b_1 \rfloor$$
+
+The cut is actually to add a variable $s$ which should be positive
+
+$$s=\sum\limits_{j=m+1}(a_{ij}-\lfloor a_{1j}\rfloor) x_j - (b_1 - \lfloor b_1 \rfloor)$$
+
+#### Algorithm:
+
+- Solve the linear relaxation
+- Choose a row i whose constant is fractional and add the Gomory cut
+- Apply the dual simplex to obtain feasibility
+- Iterate until the solution is integral or there is no feasible solution
+
+### Polyhedral Cuts
+> Cuts that represent the facets of the convex hull of the integer solution
+>
+> If we have all the cuts, we could use linear programming to solve the problem.
+
+<img src="../../fig/ConvexHull.png" alt="ConvexHull" height="250">
+
+### Cover Cuts
+
+Consider the following constraint:
+
+$$\sum\limits_{j=1}^n a_jx_j\leq b$$
+
+A set $C\subset\\{1:n\\}$ is a cover if
+
+$$\sum\limits_{j\in C}a_j > b$$
+
+and a cover is minimal if any subset is not a cover.
+
+If $C$ is a cover, then the solution need to satisfie
+
+$$\sum\limits_{j\in C}x_j \leq |C|-1$$
+
+which is equivalent to
+
+$$\sum\limits_{j\in C}(1-x_j) \geq 1$$
+
+Given a solution, we would like to know whether there exists a cover cut that cut the solution. Which means is there a cover set $C$ that the solution violate the constraint:
+
+$$\sum\limits_{j\in C}a_j > b,\quad\sum\limits_{j\in C}(1-x_j) < 1$$
+
+To answer this question, we only need to solve the following problem:
+
+$$
+\begin{align*}
+\min\quad &\sum\limits_{j\in\{1:n\}}(1-x_j^*)z_j\\
+\text{s.t.}\quad & \sum\limits_{j\in\{1:n\}}a_jz_j > b\\
+&z_j\in\{0,1\}
+\end{align*}
+$$
+
+If the minimum value is lower than 1 then we have a cut, otherwise the cut doesn't exist.
+
+By replacing $z_j$ by $1-y_j$, it's a Knapsack problem.
+
+### Column Generation
+
+[Column Generation for Cutting Stock](../../doc/DiscreteOptim-MIP-ColumnGeneration.pdf)
