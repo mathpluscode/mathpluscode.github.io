@@ -58,3 +58,6 @@ The objective is to simulate the phenomenon of slow light and forbidden frequenc
 We use the Finite Element Method as scheme with the help of Gauss-Legendre quadrature.
 
 [More details](page/2A-PSC-SlowLight)
+
+### Notes
+[Notes](page/notebook)
