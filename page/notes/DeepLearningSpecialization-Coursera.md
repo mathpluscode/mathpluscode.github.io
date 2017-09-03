@@ -380,6 +380,195 @@ If we use ReLU activation functions,
 
 $$W^{[L]} = \sqrt{\frac{2}{n^{[l-1]}}} \text{rand}((n^{[l]},n^{[l-1]}))$$
 
+### Mini-batch gradient descent
+
+Split the training dataset $X$ into mini-batches $X^{\{t\}}$, and use only a mini-batch to calculate the gradient. By this way, the algorithme start to make progress even before finishing the entire giant training set.
+
+Typically the mini-batch size is 64, 128, 256 or 512.
+
+### Gradient descent with momentum
+
+#### Exponentially weighted averages
+
+<img src="../../fig/ExpotentiallyWeightedAverages.png" alt="Expotentially Weighted Averages" height="250">
+
+Given data $\theta_1, \theta_2, \cdots$, we can estimate as
+
+$$v_0=0,\quad v_t=\beta v_{t-1}+(1-\beta)\theta_t$$
+
+$v_t$ is an approximate average over $\frac{1}{1-\beta}$ days.
+
+In fact,
+
+$$v_t=(1-\beta)\theta_t+\beta v_{t-1}=(1-\beta)\theta_t+(1-\beta)\beta\theta_{t-1}+\cdots+(1-\beta)\beta^{t-s}\theta_{s}+\cdots+(1-\beta)\beta^{t-1}\theta_1$$
+
+and we have $\lim\limits_{\varepsilon\rightarrow 0}(1-\varepsilon)^{\frac{1}{\varepsilon}}=\frac{1}{e}$, so $\beta^{\frac{1}{1-\beta}}\approx\frac{1}{e}$
+
+##### Bias correction
+
+We can see that $v_t$ is a linear combination of $\theta_i$ and the sum of coefficients is $1-\beta^t$. When $t$ is small, $v_t$ is too small and it's not accurate enough. So we can correct the bias as following:
+
+$$\frac{v_t}{1-\beta^t}=(1-\beta)\sum\limits_{s=0}^{t-1}\beta^s\theta_{t-s}$$
+
+#### Momentum
+> Idea is to average the gradient to prevent oscillation. Then the algorithme may be accelerated.
+
+$V_{dW} = 0, V_{db} = 0$
+
+On iteration $t$:
+
+-   Compute $dW$, $db$ using mini-batch
+-   $V_{dW} = \beta V_{dW}+(1-\beta) dW$
+
+    $V_{db} = \beta V_{db}+(1-\beta) db$
+-   $W = W - \alpha V_{dW}$
+
+    $b = b - \alpha V_{db}$
+
+Practically, we don't use bias correction for exponentially weighted averages and $\beta = 0.9$.
+
+### RMSprop
+
+$S_{dW} = 0, S_{db} = 0$
+
+On iteration $t$:
+
+-   Compute $dW$, $db$ using mini-batch
+-   $S_{dW} = \beta S_{dW}+(1-\beta) dW^2$
+
+    $S_{db} = \beta S_{db}+(1-\beta) db^2$
+-   $W = W - \alpha \frac{dW}{\sqrt{S_{dW}}+\varepsilon}$
+
+    $b = b - \alpha \frac{db}{\sqrt{S_{db}}+\varepsilon}$
+
+Idea is that : when an element of gradient is too big/small, for example $db$ is too big, then by dividing by $\sqrt{S_{db}}$, $db$ will be smaller. The $\varepsilon$ is to prevent division by zero, normally $\varepsilon=10^{-8}$.
+
+By using RMSprop, we can use larger $\alpha$.
+
+### Adam
+> Combine Momentum and RMSprop
+>
+> Adam : Adaptive Moment Estimation
+
+$V_{dW} = 0, V_{db} = 0, S_{dW} = 0, S_{db} = 0$
+
+On iteration $t$:
+
+-   Compute $dW$, $db$ using mini-batch
+-   $V_{dW} = \beta_1 V_{dW}+(1-\beta_1) dW$
+
+    $V_{db} = \beta_1 V_{db}+(1-\beta_1) db$
+
+    $S_{dW} = \beta_2 S_{dW}+(1-\beta_2) dW^2$
+
+    $S_{db} = \beta_2 S_{db}+(1-\beta_2) db^2$
+
+-   Bias correction
+    -   $V_{dW} = \frac{V_{dW}}{1-\beta_1^t},\quad V_{db} = \frac{V_{db}}{1-\beta_1^t}$
+    -   $S_{dW} = \frac{S_{dW}}{1-\beta_2^t},\quad S_{db} = \frac{S_{db}}{1-\beta_2^t}$
+
+-   $W = W - \alpha \frac{V_{dW}}{\sqrt{S_{dW}}+\varepsilon}$
+
+    $b = b - \alpha \frac{V_{db}}{\sqrt{S_{db}}+\varepsilon}$
+
+Hyperparameters:
+- $\alpha$ need to be tune
+- $\beta_1 = 0.9$
+- $\beta_2 = 0.999$
+- $\varepsilon = 10^{-8}$
+
+### Learning rate decay
+
+We note one epoch is one pass through the data, then we can decrease learning rate $\alpha$ as following:
+
+$$\alpha = \frac{1}{1+\text{decay rate}~*~\text{epoch num}}\alpha_0$$
+
+or
+
+-   $\alpha = \text{decay rate}^\text{epoch num}\alpha_0$
+-   $\alpha = \frac{k}{\sqrt{\text{epoch num}}}\alpha_0$
+
+### Hyperparameter tuning
+
+Hyperparameters:
+- learning rate
+- mini-batch size, number of hidden units
+- etc.
+
+Try random values instead of using a grid to tune.
+When finding a good point, we can zoom in and sample more densily to tune.
+
+#### Appropriate scale
+
+- number of layers : 2,3,4, sample on linear scale.
+- learning rate $\alpha$ : $10^{-4}$ ~ $1$, sample on log scale.
+
+### Batch Normalization
+
+In NN, can we normalize $z^{[l]}$ (or $a^{[l]}$) to train $w^{[l]},b^{[l]}$ faster.
+
+$$z_{\text{norm}}^{[l] (i)} = \frac{z^{[l] (i)} - \mu}{\sqrt{\sigma^2+\varepsilon}}$$
+
+$$\tilde{z}^{[l] (i)} = \gamma z_{\text{norm}}^{[l] (i)} + \beta$$
+
+Here we normalize $z^{[l] (i)}$ then we adjust it to have a specific variance $\gamma^2$ and bias $\beta$.
+
+$$X \xrightarrow{W^{[1]},b^{[1]}} Z^{[1]} \xrightarrow{\gamma^{[1]},\beta^{[1]}} \tilde{Z}^{[1]} \rightarrow a^{[1]} \rightarrow \cdots$$
+
+Now, the parameters are $W^{[l]},b^{[l]},\gamma^{[l]},\beta^{[l]}$. We need to learn $\gamma^{[l]},\beta^{[l]}$ and they are of size ($n^{[l]}$,$1$).
+
+In fact, we know that $Z^{[l+1]} = W^{[l+1]} A^{[l]} + b^{[l+1]}$, but since we will normalize $Z^{[l+1]}$, $b^{[l+1]}$ is no longer useful. So we can get rid of it.
+
+Moreover, when using mini-batch, we normalize $Z^{[l]}$ by only using the data on the mini-batch. When testing, we need to calculate the $\mu, \sigma$ differently.
+
+It's proposed to calculate $\mu, \sigma$ for each mini batch and then we use exponentially weighted averages to get $\mu, \sigma$ for the entire dataset.
+
+### Multi-class classification
+
+#### Softmax layer
+> hard max : [1, 0, 0, 0]
+>
+> soft max : [0.8, 0.1, 0.002, 0.098]
+
+To do multi-class classification, we change the last activation function.
+
+We know that $z^{[L]} = W^{[L]} a^{[L-1]} + b^{[L]}$, then we define $a^{[L]}$ as follows:
+
+$$t = \exp(z^{[L]}), \quad \hat{y}=a^{[L]}=\frac{t}{\sum t_i}$$
+
+then $a_i^{[L]}$ represents the possibility that the sample belongs to class i.
+
+If we define $a^{[L]}=g^{[L]}(z^{[L]})$, the function $g^{[L]}$ takes a vector as input and the output is also a vector. It's different from the other activation functions that we have seen.
+
+##### Loss function
+
+For example, we have 
+
+$$y=\begin{bmatrix}0\\1\\0\\0\end{bmatrix}
+,\quad \hat{y}=\begin{bmatrix}0.3\\0.2\\0.1\\0.4\end{bmatrix}$$
+
+then the loss function 
+
+$$L(\hat{y},y)=-\sum\limits_j y_j\log\hat{y}_j=-\log(0.2)$$
+
+## Deep learning frameworks
+
+- Caffe / Caffe 2
+- CNTK
+- DL4J
+- Keras
+- Lasagne
+- mxnet
+- PaddlePaddle
+- TensorFlow
+- Theano
+- Torch
+
+How to choose ?
+- Ease of programming (development and deployment)
+- Running speed
+- Truly open (open source with good governance)
+
 <br>
 
 ---

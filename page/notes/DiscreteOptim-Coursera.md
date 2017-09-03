@@ -6,6 +6,8 @@ title: Discrete Optimization
 
 # Coursera Discrete Optimization
 
+> [https://www.coursera.org/learn/discrete-optimization](https://www.coursera.org/learn/discrete-optimization)
+
 <br>
 
 ---
@@ -65,12 +67,12 @@ Strategies
     >
     >   The traveling tournament problem (TTP) / Warehouse location / Car Sequencing
 
-The traveling tournament problem (TTP)
-- swap homes
-- swap rounds
-- swap teams
-- partial swap rounds
-- partial swap teams
+    The traveling tournament problem (TTP)
+    - swap homes
+    - swap rounds
+    - swap teams
+    - partial swap rounds
+    - partial swap teams
 
 -   K-OPT
     >   The traveling salesman problem (TSP)
