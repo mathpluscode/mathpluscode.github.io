@@ -4,7 +4,7 @@ math: true
 title: Discrete Optimization
 ---
 
-# Coursera Discrete Optimization
+# Discrete Optimization
 
 > [https://www.coursera.org/learn/discrete-optimization](https://www.coursera.org/learn/discrete-optimization)
 

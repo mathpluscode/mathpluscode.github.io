@@ -4,7 +4,7 @@ math: true
 title: Intro to AI
 ---
 
-# UC Berkeley CS188 Intro to AI
+# Intro to AI
 > [http://ai.berkeley.edu](http://ai.berkeley.edu)
 
 <br>

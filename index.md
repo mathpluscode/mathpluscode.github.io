@@ -8,6 +8,11 @@ This GitHUB Page is built to present several projects that I worked / I'm workin
 
 And the construction of the site is still in process :)
 
+# Notes
+> Notes of several MOOCs about AI, DL, NLP, etc.
+
+[Note List](page/notebook)
+
 # Projects
 
 ### NVIDIA® Jetson™ TX2 Developer Kit
@@ -58,6 +63,3 @@ The objective is to simulate the phenomenon of slow light and forbidden frequenc
 We use the Finite Element Method as scheme with the help of Gauss-Legendre quadrature.
 
 [More details](page/2A-PSC-SlowLight)
-
-### Notes
-[Notes](page/notebook)
