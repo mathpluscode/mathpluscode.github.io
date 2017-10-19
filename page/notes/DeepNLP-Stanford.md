@@ -12,6 +12,15 @@ title: Natural Language Processing with Deep Learning
 <br>
 
 ---
+
+# Differential, Gradient, Jacobian, Chain Rule
+
+[Review of differential calculus theory](../../doc/ReviewDifferentialCalculus.pdf)
+
+<br>
+
+---
+
 # word2vec
 
 ## Some word representations:
@@ -89,8 +98,6 @@ We can use Stochastic Gradient Descent to accelerate the optimization : update p
 > [Word2Vec Tutorial - The Skip-Gram Model](http://mccormickml.com/2016/04/19/word2vec-tutorial-the-skip-gram-model/)
 >
 > Mikolov, Tomas, et al. "Distributed representations of words and phrases and their compositionality." Advances in neural information processing systems. 2013.
->
-> Mikolov, Tomas, et al. "Efficient estimation of word representations in vector space." arXiv preprint arXiv:1301.3781 (2013).
 
 Since it's expensive to calculate the sum $\sum\limits_{w=1}^V\exp(u_w^Tv_c)$, we change the objective function as follows:
 
@@ -131,6 +138,7 @@ Since "New York" has a much different meaning than the individual words "New" an
 Predict center word from sum of surrounding word vectos instead of predicting surrounding single words from center word as in skip-gram model.
 
 ## Glove
+> Pennington, Jeffrey, Richard Socher, and Christopher Manning. "Glove: Global vectors for word representation." Proceedings of the 2014 conference on empirical methods in natural language processing (EMNLP). 2014.
 
 $$J(\theta) = \frac{1}{2}\sum\limits_{i,j=1}^W f(P_{ij}) (u_i^Tv_j-\log P_{ij})^2$$
 
@@ -261,9 +269,9 @@ where, for example, if we'd like to build a location classifier
 - $s$ = score(museums in Paris are amazing) ("Paris" is a location)
 - $s_c$ = score(Not all museums in Paris) ("museums" isn't a location)
 
-Now the parameters are $U,W,b,x$. By noting (.* means element-wise multiplication)
+Now the parameters are $U,W,b,x$. By noting ($\circ$ means element-wise multiplication)
 
-$$\delta = U .* f'(z)$$
+$$\delta = U \circ f'(z)$$
 
 The gradients are
 - $\frac{\partial s}{\partial U} = a$
@@ -276,5 +284,198 @@ The gradients are
 
 ---
 
+# Recurrent Neural Networks
+
+<img src="../../fig/RecurrentNeuralNetwork.png" alt="Recurrent Neural Network" height="200">
+
+Given list of word vectors $x_1,\cdots,x_{t-1},x_t,x_{t+1},\cdots,x_T$.
+
+At a single time step,
+
+$$
+\begin{align*}
+h_t &= f(W^{(hh)}h_{t-1}+W^{(hx)}x_{[t]})\\
+\hat{y}_t &= \text{softmax}(W^{(S)}h_t)
+\end{align*}
+$$
+
+where
+- $W^{(hh)}\in\mathbb{R}^{D_h\times D_h}, W^{(hx)}\in\mathbb{R}^{D_h\times d}, W^{(S)}\in\mathbb{R}^{\|V\|\times D_h}$
+- $x_{[t]}$ is word vector for the word appears at t-th time step. In other words, $x_{[t]}$ is the column vector of $L$ (embedding matrix) at index $[t]$ at time step $t$
+- $\hat{P}( x_{t+1} = v_j \| x_t,\cdots,x_1)=\hat{y}_{t,j}$
+- $h_0\in\mathbb{R}^{D_h}$ is some initialization vector for the hidden layer at time step 0
+
+The corresponding loss function is
+
+$$J^{(t)}(\theta)=-\sum\limits_{j=1}^{|V|}y_{t,j}\log \hat{y}_{t,j}$$
+
+The total evaluation is (to minimize)
+
+$$J=2^{\frac{1}{T}\sum\limits_{t=1}^T J^{(t)}}$$
+
+## Simpler RNN
+
+We now consider a simpler RNN:
+
+$$
+\begin{align*}
+h_t &= Wf(h_{t-1})+W^{(hx)}x_{[t]}\\
+\hat{y}_t &= W^{(S)}f(h_t)
+\end{align*}
+$$
+
+The total error is the sum of each error at time steps $t$,
+
+$$\frac{\partial E}{\partial W} = \sum\limits_{t=1}^T\frac{\partial E_t}{\partial W}$$
+
+and we have the chain rule application:
+
+$$\frac{\partial E_t}{\partial W}=\sum\limits_{k=1}^t \frac{\partial E_t}{\partial y_t}\frac{\partial y_t}{\partial h_t}\frac{\partial h_t}{\partial h_k}\frac{\partial h_k}{\partial W}$$
+
+as well as
+
+$$\frac{\partial h_t}{\partial h_k}=\prod\limits_{j=t}^{k+1}\frac{\partial h_j}{\partial h_{j-1}}$$
+
+where
+
+$$\frac{\partial h_j}{\partial h_{j-1}}=W\text{diag}(f'(h_{j-1}))$$
+
+## The vanishing/exploding gradient problem
+
+We can analyze the norms of the Jacobians
+
+$$\|\frac{\partial h_j}{\partial h_{j-1}}\|\leq \|W\| \|\text{diag}(f'(h_{j-1}))\|\leq \beta_W \beta_h$$
+
+where $\beta_W,\beta_h$ are upper bounds of the norms.
+
+Then
+
+$$\|\frac{\partial h_t}{\partial h_k}\|\leq\prod\limits_{j=t}^{k+1}\|\frac{\partial h_j}{\partial h_{j-1}}\|\leq (\beta_W \beta_h)^{t-k}$$
+
+where the right side can vanish or explode quickly.
+
+- The vanishing gradients can be fixed by initializing $W$ to identity matrix.
+    > Parsing with Compositional Vector Grammars, Socher et al. 2013
+    > 
+    > A Simple Way to Initialize Recurrent Networks of Rectified Linear Units, Le et al. 2015
+
+- The exploding gradients may be caused by high curvature walls and one solution is to limit the norm below a certain value.
+    > On the difficulty of training Recurrent Neural Networks, Pascanu et al. 2013
+
+    <img src="../../fig/RNNExplodingGradient.png" alt="Recurrent Neural Network Exploding Gradient" height="200">
+
+## Bidirectional RNN
+
+<img src="../../fig/BidirectionalRNN.png" alt="Bidirectional Recurrent Neural Network" height="200">
+
+$$
+\begin{align*}
+\overrightarrow{h}_t &= \sigma(\overrightarrow{W}x_t+\overrightarrow{V}\overrightarrow{h}_{t-1}+\overrightarrow{b})\\
+\overleftarrow{h}_t &= \sigma(\overleftarrow{W}x_t+\overleftarrow{V}\overleftarrow{h}_{t-1}+\overleftarrow{b})\\
+\hat{y}_t &= g(U[\overrightarrow{h}_t;\overleftarrow{h}_t] + c)
+\end{align*}
+$$
+
+## Deep Bidirectional RNN
+
+<img src="../../fig/DeepBidirectionalRNN.png" alt="Deep Bidirectional Recurrent Neural Network" height="200">
+
+$$
+\begin{align*}
+\overrightarrow{h}_t^{(i)} &= f(\overrightarrow{W}^{(i)}h_t^{(i-1)}+\overrightarrow{V}\overrightarrow{h}_{t-1}^{(i)}+\overrightarrow{b}^{(i)})\\
+\overleftarrow{h}_t^{(i)} &= f(\overleftarrow{W}^{(i)}h_t^{(i-1)}+\overleftarrow{V}\overleftarrow{h}_{t-1}^{(i)}+\overleftarrow{b}^{(i)})\\
+\hat{y}_t &= g(U[\overrightarrow{h}_t^{(L)};\overleftarrow{h}_t^{(L)}] + c)
+\end{align*}
+$$
+
+<br>
+
+---
+
+# Machine Translation
+
+## RNN Translation Model Extensions
+
+<img src="../../fig/MachineTranslationRNN.png" alt="Machine Translation Recurrent Neural Network" height="600">
+
+- Train different RNN weights for encoding and decoding
+- Compute every hidden state in decoder from
+    - Previous hidden state (standard)
+    - Last hidden vector of encoder $c=h_T$
+    - Previous predicted output word $y_{t-1}$
+
+    $$h_{D,t}=\phi_D(h_{t-1},c,y_{t-1})$$
+
+    > Each input of $\phi$ has its own linear transformation matrix.
+    >
+    > i.e. $\phi(x,y,z) = f(Wx+Uy+Vz)$
+- Train stacked/deep RNNs with multiple layers
+    > Stacked RNN ?
+- Potentially train bidirectional encoder
+- Train input sequence in reverse order for simple optimization problem: Instead of A B C -> X Y, train with C B A -> X Y
+    > The intuitive idea is: if A is translated to X, then by reversing the order, we decode X right after encoding A, they are closer.
+
+## Gated Recurrent Units
+
+<img src="../../fig/MachineTranslationGRU.png" alt="Machine Translation Gated Recurrent Units" height="150">
+
+$$
+\begin{align*}
+z_t &= \sigma(W^{(z)}x_t+U^{(z)}h_{t-1}) \\
+r_t &= \sigma(W^{(r)}x_t+U^{(r)}h_{t-1}) \\
+\tilde{h}_t &= \tanh(Wx_t+U(r_t\circ h_{t-1})) \\
+h_t &= z_t\circ h_{t-1}+(1-z_t)\circ \tilde{h}_t
+\end{align*}
+$$
+
+where $\circ$ means element-wise multiplication.
+
+- $\tilde{h}_t$ is a new memory content
+- $z_t$ is update gate
+
+    Units with long-term dependencies ofen have update gates very active
+
+    - if it close to 0, then $\tilde{h}_t$ ignores previous memory and the new word information dominate.
+    - if it close to 1, then we can copy information in that unit through many time steps. Less vanishing gradient!
+
+- $r_t$ is reset gate
+
+    Units with short-term dependencies ofen have reset gates very active
+    
+    - if it close to 0, then the final memory ignore previous hidden state and it allows model to drop information that is irrelevant in the future
+    - if it close to 1, then the final memory $h_t$ ignores current state
+
+## Long-short-term-memories (LSTMs)
+> [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
+
+<img src="../../fig/MachineTranslationLSTMs.png" alt="LSTMs" height="300">
+
+$$
+\begin{align*}
+i_t &= \sigma(W^{(i)}x_t+U^{(i)}h_{t-1}) \\
+f_t &= \sigma(W^{(f)}x_t+U^{(f)}h_{t-1}) \\
+o_t &= \sigma(W^{(o)}x_t+U^{(o)}h_{t-1}) \\
+\tilde{c}_t &= \tanh(W^{(c)}x_t+U^{(c)}h_{t-1}) \\
+c_t &= f_t\circ c_{t-1}+i_t\circ \tilde{c}_t \\
+h_t &= o_t \circ \tanh(c_t)
+\end{align*}
+$$
+
+where
+- $i_t$ is input gate
+- $f_t$ is forget gate
+- $o_t$ is output gate
+- $\tilde{c}_t$ is new memory cell
+- $c_t$ is final memory cell
+- $h_t$ is final hidden state
+
+## Pointer Sentinel Mixture Models
+
+ 
+
+<br>
+
+---
+
 # Not finished
-> Notes until lecture 5
+> Notes until lecture 8

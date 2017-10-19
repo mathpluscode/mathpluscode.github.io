@@ -313,8 +313,7 @@ $$\begin{align*}
 L(x,\lambda,v) & :=
 f_0(x)+\sum\limits_{i=1}^m\lambda_i f_i(x)+\sum\limits_{i=1}^p v_i h_i(x)\\
 & \leq
-f_0(x)+\sum\limits_{i=1}^mI_-(f_i(x))+\sum\limits_{i=1}^pI_0(h_i(x))\\
-& \leq f_0(x)
+f_0(x)+\sum\limits_{i=1}^mI_-(f_i(x))+\sum\limits_{i=1}^pI_0(h_i(x))
 \end{align*}$$
 
 We define the **Lagrange dual function** $g(\lambda,v)$ as

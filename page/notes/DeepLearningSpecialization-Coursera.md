@@ -207,7 +207,7 @@ a_{n^{[l]}}^{[l] (i)}
 we now have, for the i-th example,
 
 $$\begin{align*}
-dz^{[l+1] (i)}&= da^{[l+1] (i)}~.*~{g^{[l+1]}}'(z^{[l+1] (i)}) \\
+dz^{[l+1] (i)}&= da^{[l+1] (i)}~\circ~{g^{[l+1]}}'(z^{[l+1] (i)}) \\
 
 dW^{[l+1]}&= dz^{[l+1] (i)} (a^{[l] (i)})^T \\
 
@@ -235,7 +235,7 @@ a^{[l] (1)} & a^{[l] (2)} & \cdots & a^{[l] (m)}
 we have,
 
 $$\begin{align*}
-dZ^{[l+1]}&= dA^{[l+1]}~.*~{g^{[l+1]}}'(Z^{[l+1]}) \\
+dZ^{[l+1]}&= dA^{[l+1]}~\circ~{g^{[l+1]}}'(Z^{[l+1]}) \\
 
 dW^{[l+1]}&= \frac{1}{m}dZ^{[l+1]}(A^{[l+1]})^T \\
 
@@ -246,7 +246,7 @@ dA^{[l]}&= (W^{[l+1]})^TdZ^{[l+1]}
 \end{align*}
 $$
 
-Here $.*$ means element-wise multiplication, $[1]_{(m,1)}$ means `ones((m,1))` and we calculate the average over m examples for $dW, db$.
+Here $\circ$ means element-wise multiplication, $[1]_{(m,1)}$ means `ones((m,1))` and we calculate the average over m examples for $dW, db$.
 
 It's a **backpropagation**.
 
@@ -323,7 +323,7 @@ $$dW^{[l]} = \frac{1}{m}dZ^{[l]}(A^{[l]})^T + \frac{\lambda}{m}W^{[l]}$$
 
 For example, for the l-th layer we keep each unit with a probability $p$, so we can change $A^{[l]}$ as:
 
-$$A^{[l]} = A^{[l]}~.*~(\text{rand}((n^{[l]}, m)) < p)$$
+$$A^{[l]} = A^{[l]}~\circ~(\text{rand}((n^{[l]}, m)) < p)$$
 
 $$A^{[l]} = \frac{1}{p}A^{[l]}$$
 
