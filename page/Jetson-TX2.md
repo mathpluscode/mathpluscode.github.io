@@ -3,6 +3,12 @@ layout: default
 title: Jetson TX2
 ---
 
+# Installation of JetPack
+
+> Update:
+>
+> The latest JetPack is 3.1 and we can follow the same procedure to install the system. This time, the host PC's os should be ubuntu 16.04
+
 Recently, I bought the NVIDIA® Jetson™ TX2 Developer Kit for studying CUDA since my laptop doesn't have a Nvidia GPU. The process of installing the environment is quite tough so I'd like to write it down if never it can help someone else.
 
 1. First, after receiving Jetson TX2, we need to power it up (cf. Quick Start Guide), login (username and password are both nvidia) and install the graphical desktop by following the guide.
@@ -63,3 +69,16 @@ Recently, I bought the NVIDIA® Jetson™ TX2 Developer Kit for studying CUDA si
             > Here nvidia is the username in Jetson system.
 
 That's all. Now we can run the application remotely.
+
+# Installation of other packages
+
+-   [Tensorflow](https://www.youtube.com/watch?v=z8LYFVBC5oQ)
+
+-   [OpenCV](https://www.youtube.com/watch?v=GlDjscSAtDY)
+    > To install opencv for python3.x, we may need to type `cmake -D BUILD_opencv_python3=ON ..` before sudo make install
+
+-   [Openai Gym](https://github.com/openai/gym)
+    > For Atari games, it contains the Arcade Learning Environment.
+
+-   [Openai Baselines](https://github.com/openai/baselines)
+    > This package only support python3 and the DQN test uses OpenCV. Therefore we have to install OpenCV for python3.
