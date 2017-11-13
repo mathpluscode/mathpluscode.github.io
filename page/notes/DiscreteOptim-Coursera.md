@@ -201,9 +201,9 @@ The solution space is convex set and the optimal solution is at a vertex.
 
     $$\begin{align*}
     \min~c_1x_1+\cdots&+c_nx_n\\
-    a_{11}x_1+\cdots&+a_{1n}x_n+y_1 b_1\\
+    a_{11}x_1+\cdots&+a_{1n}x_n+y_1 =b_1\\
     \cdots&\\
-    a_{m1}x_1+\cdots&+a_{mn}x_n+y_m b_m\\
+    a_{m1}x_1+\cdots&+a_{mn}x_n+y_m =b_m\\
     x_i\geq& 0\\
     y_j\geq& 0\\
     \end{align*}$$
@@ -214,9 +214,9 @@ The solution space is convex set and the optimal solution is at a vertex.
 
     $$\begin{align*}
     \min~y_1+\cdots&+y_m\\
-    a_{11}x_1+\cdots&+a_{1n}x_n+y_1 b_1\\
+    a_{11}x_1+\cdots&+a_{1n}x_n+y_1 =b_1\\
     \cdots&\\
-    a_{m1}x_1+\cdots&+a_{mn}x_n+y_m b_m\\
+    a_{m1}x_1+\cdots&+a_{mn}x_n+y_m =b_m\\
     x_i\geq& 0
     \end{align*}$$
 

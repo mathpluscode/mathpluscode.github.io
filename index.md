@@ -6,20 +6,14 @@ title: MathPlusCode
 # Hello World
 This GitHUB Page is built to present several projects that I worked / I'm working on.
 
-And the construction of the site is still in process :)
-
-# Notes
-> Notes of several MOOCs about AI, DL, NLP, etc.
-
-[Note List](page/notebook)
-
 # Projects
 
-### NVIDIA® Jetson™ TX2 Developer Kit
+### Deep Reinforcement Learning in playing Atari games
+> I'm currently studying on this topic with Postdoc Researcher [Nikolaos Tziortziotis](http://www.lix.polytechnique.fr/Labo/Nikolaos.Tziortziotis/) and [Prof. Jesse Read](http://jmread.github.io/) in DaSciM Team under the supervision of [Prof. Michalis Vazirgiannis](http://www.lix.polytechnique.fr/~mvazirg/).
+>
+> Due to the lack of Nvidia GPU in my laptop, I use the Jetson-TX2 device for coding and testing.
 
-> The fastest, most power-efficient embedded AI computing device.
-
--   [Installation of environment](page/Jetson-TX2)
+-   [Installation of environments](page/Jetson-TX2)
 
 ### Hacking the Paris metro
 > Project of course "INF442 : Treatment of Big Data" at École Polytechnique
@@ -62,4 +56,7 @@ The objective is to simulate the phenomenon of slow light and forbidden frequenc
 
 We use the Finite Element Method as scheme with the help of Gauss-Legendre quadrature.
 
-[More details](page/2A-PSC-SlowLight)
+# Notes
+> Notes of several MOOCs about AI, DL, NLP, etc.
+
+[Note List](page/notebook)
