@@ -9,7 +9,7 @@ This GitHUB Page is built to present several projects that I worked / I'm workin
 # Projects
 
 ### Deep Reinforcement Learning in playing Atari games
-> I'm currently studying on this topic with Postdoc Researcher [Nikolaos Tziortziotis](http://www.lix.polytechnique.fr/Labo/Nikolaos.Tziortziotis/) and [Prof. Jesse Read](http://jmread.github.io/) in DaSciM Team under the supervision of [Prof. Michalis Vazirgiannis](http://www.lix.polytechnique.fr/~mvazirg/).
+> I'm currently studying on this topic with [Nikolaos Tziortziotis](http://www.lix.polytechnique.fr/Labo/Nikolaos.Tziortziotis/) and [Prof. Jesse Read](http://jmread.github.io/) in DaSciM Team under the supervision of [Prof. Michalis Vazirgiannis](http://www.lix.polytechnique.fr/~mvazirg/).
 >
 > Due to the lack of Nvidia GPU in my laptop, I use the Jetson-TX2 device for coding and testing.
 
