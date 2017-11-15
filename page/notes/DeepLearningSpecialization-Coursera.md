@@ -50,7 +50,7 @@ $$\frac{\partial L}{\partial w_i} = \frac{\partial L}{\partial a}\frac{\partial 
 
 ## Neural Network
 
-<img src="../../fig/NeuralNetwork.png" alt="2 layer NeuralNetwork" height="250">
+<img src="../../source/fig/NeuralNetwork.png" alt="2 layer NeuralNetwork" height="250">
 
 The first layer $a^{[0] (i)}=x^{(i)}$ is the input layer, the last layer $a^{[L] (i)}=\hat{y}^{(i)}$ is the output layer and the layers between them are hidden layers.
 
@@ -319,7 +319,7 @@ $$dW^{[l]} = \frac{1}{m}dZ^{[l]}(A^{[l]})^T + \frac{\lambda}{m}W^{[l]}$$
 
 ### Inverted Dropout regularization
 
-<img src="../../fig/NeuralNetworkDropout.png" alt="Dropout regularization" height="200">
+<img src="../../source/fig/NeuralNetworkDropout.png" alt="Dropout regularization" height="200">
 
 For example, for the l-th layer we keep each unit with a probability $p$, so we can change $A^{[l]}$ as:
 
@@ -390,7 +390,7 @@ Typically the mini-batch size is 64, 128, 256 or 512.
 
 #### Exponentially weighted averages
 
-<img src="../../fig/ExpotentiallyWeightedAverages.png" alt="Expotentially Weighted Averages" height="250">
+<img src="../../source/fig/ExpotentiallyWeightedAverages.png" alt="Expotentially Weighted Averages" height="250">
 
 Given data $\theta_1, \theta_2, \cdots$, we can estimate as
 

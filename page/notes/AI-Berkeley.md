@@ -411,7 +411,7 @@ Use particles to present the probability distribution
 
 # Dynamic Bayes Nets
 
-<img src="../../fig/DynamicBayesNets.png" alt="DynamicBayesNets" height="200">
+<img src="../../source/fig/DynamicBayesNets.png" alt="DynamicBayesNets" height="200">
 
 - Initialization
 
@@ -438,7 +438,7 @@ Use particles to present the probability distribution
 
 # Bayes Nets
 
-<img src="../../fig/BaysNets.png" alt="BaysNets" height="200">
+<img src="../../source/fig/BaysNets.png" alt="BaysNets" height="200">
 
 ## Definitions
 - A set of nodes, one per variable X
@@ -558,7 +558,7 @@ The elimination ordering can greatly affect the size of the largest factor. And 
 
 ### General Example
 
-<img src="../../fig/BaysNetGeneralVariableEliminationExample.png" alt="GeneralVariableEliminationExample" height="150">
+<img src="../../source/fig/BaysNetGeneralVariableEliminationExample.png" alt="GeneralVariableEliminationExample" height="150">
 
 Given $P(B), P(E), P(A\|B,E), P(j\|A), P(m\|A)$, we want to know $P(B\|j,m)$
 
@@ -796,7 +796,7 @@ $$\gamma = \min(\gamma, C)$$
 
 ## SVM (Support Vector Machines)
 
-<img src="../../fig/SVM.png" alt="SVM" height="200">
+<img src="../../source/fig/SVM.png" alt="SVM" height="200">
 
 $$\min\limits_w \frac{1}{2}\|w\|^2$$
 
