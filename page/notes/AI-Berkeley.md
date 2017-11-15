@@ -263,7 +263,7 @@ Rational Preferences
         $$(s,a,s',R(s,a,s'))$$
 
     - Update $V(s)$
-        1. $\text{sample} = R(s,a,s') + \gamma V(s)$
+        1. $\text{sample} = R(s,a,s') + \gamma V'(s)$
         1. $V(s) = V(s) + \alpha (\text{sample} - V(s))$
 
     Problem:
@@ -748,7 +748,7 @@ Use $\text{sgn}(w^Tf(x))$ to classify instance
 - $w=0$
 - For each training instance
     - $y=\text{sgn}(w^Tf(x))$
-    - If $y$ is not different from the exact label $y^*$
+    - If $y$ is different from the exact label $y^*$
 
         $w=w+y^*f(x)$
 
@@ -759,7 +759,7 @@ There are different weights $w_y$ and we use $\arg\max\limits_y {w_y}^Tf(x)$ to 
 - $w_y=0$ for all class
 - For each training instance
     - $y=\arg\max\limits_y {w_y}^Tf(x)$
-    - If $y$ is not different from the exact label $y^*$
+    - If $y$ is different from the exact label $y^*$
 
         $w_{y}=w_{y}-f(x), \quad w_{y^\*}=w_{y^\*}+f(x)$
 
