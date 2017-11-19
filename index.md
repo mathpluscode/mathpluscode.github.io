@@ -4,7 +4,9 @@ title: MathPlusCode
 ---
 
 # Hello World
-This GitHUB Page is built to present several projects that I worked / I'm working on.
+This Page is built to present several projects that I worked / I'm working on.
+
+GitHub Page: [https://github.com/mathpluscode/](https://github.com/mathpluscode/)
 
 # Projects
 
