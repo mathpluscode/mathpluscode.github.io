@@ -278,7 +278,7 @@ We consider the following **primal problem**:
 $$\begin{align*}
 \text{minimize}~f_0(x)\\
 \text{s.t.}\quad f_i(x) &\leq 0,\quad i=1:m\\
-h_i(x) &\leq 0,\quad i=1:p
+h_i(x) &= 0,\quad i=1:p
 \end{align*}$$
 
 ### Dual problem
@@ -377,6 +377,22 @@ If
 $$d^*=p^*$$
 
 then we say that **strong duality** holds.
+
+### KKT Optimality Conditions
+
+Karush-Kuhn-Tucker conditions:
+
+$$
+\begin{align*}
+f_i &\leq 0\\
+h_i &= 0\\
+\lambda_i & \geq 0\\
+\lambda_if_i & = 0\\
+\nabla_xL(x,\lambda,v) &= 0
+\end{align*}
+$$
+
+For any optimization problem for which strong duality obtains, any pair of primal and dual optimal points must satisfy the KKT conditions (**necessary**). When the primal problem is convex ($f_i$ are convex and $h_i$ are affine), the KKT conditions are also **sufficient** for the points to be primal and dual optimal.
 
 ### Interpretation
 
