@@ -360,10 +360,16 @@ $$
 \forall \lambda\geq 0,v\quad \inf\limits_x L(x,\lambda,v) \leq L(x,\lambda,v)
 $$
 
-so
+so, for each $x$,
 
 $$
-d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v) \leq \sup\limits_{\lambda\geq 0,v}L(x,\lambda,v) \leq \inf\limits_x\sup\limits_{\lambda\geq 0,v}L(x,\lambda,v)=p^*
+d^*=\sup\limits_{\lambda\geq 0,v}\inf\limits_x L(x,\lambda,v) \leq \sup\limits_{\lambda\geq 0,v}L(x,\lambda,v)
+$$
+
+Therefore, we can do the infimum over $x$:
+
+$$
+d^* \leq \inf\limits_x\sup\limits_{\lambda\geq 0,v}L(x,\lambda,v)=p^*
 $$
 
 If
