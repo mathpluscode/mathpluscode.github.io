@@ -384,10 +384,10 @@ Karush-Kuhn-Tucker conditions:
 
 $$
 \begin{align*}
-f_i &\leq 0\\
-h_i &= 0\\
-\lambda_i & \geq 0\\
-\lambda_if_i & = 0\\
+f_i(x) &\leq 0,\quad i=1:m\\
+h_i(x) &= 0,\quad i=1:p\\
+\lambda_i & \geq 0,\quad i=1:m\\
+\lambda_if_i(x) & = 0,\quad i=1:m\\
 \nabla_xL(x,\lambda,v) &= 0
 \end{align*}
 $$
