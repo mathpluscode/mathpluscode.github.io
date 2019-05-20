@@ -15,7 +15,7 @@ title: Natural Language Processing with Deep Learning
 
 # Differential, Gradient, Jacobian, Chain Rule
 
-[Review of differential calculus theory](../../source/doc/ReviewDifferentialCalculus.pdf)
+[Review of differential calculus theory](ReviewDifferentialCalculus.pdf)
 
 <br>
 
@@ -286,7 +286,7 @@ The gradients are
 
 # Recurrent Neural Networks
 
-<img src="../../source/fig/RecurrentNeuralNetwork.png" alt="Recurrent Neural Network" height="200">
+<img src="RecurrentNeuralNetwork.png" alt="Recurrent Neural Network" height="200">
 
 Given list of word vectors $x_1,\cdots,x_{t-1},x_t,x_{t+1},\cdots,x_T$.
 
@@ -362,11 +362,11 @@ where the right side can vanish or explode quickly.
 - The exploding gradients may be caused by high curvature walls and one solution is to limit the norm below a certain value.
     > On the difficulty of training Recurrent Neural Networks, Pascanu et al. 2013
 
-    <img src="../../source/fig/RNNExplodingGradient.png" alt="Recurrent Neural Network Exploding Gradient" height="200">
+    <img src="RNNExplodingGradient.png" alt="Recurrent Neural Network Exploding Gradient" height="200">
 
 ## Bidirectional RNN
 
-<img src="../../source/fig/BidirectionalRNN.png" alt="Bidirectional Recurrent Neural Network" height="200">
+<img src="BidirectionalRNN.png" alt="Bidirectional Recurrent Neural Network" height="200">
 
 $$
 \begin{align*}
@@ -378,7 +378,7 @@ $$
 
 ## Deep Bidirectional RNN
 
-<img src="../../source/fig/DeepBidirectionalRNN.png" alt="Deep Bidirectional Recurrent Neural Network" height="200">
+<img src="DeepBidirectionalRNN.png" alt="Deep Bidirectional Recurrent Neural Network" height="200">
 
 $$
 \begin{align*}
@@ -396,7 +396,7 @@ $$
 
 ## RNN Translation Model Extensions
 
-<img src="../../source/fig/MachineTranslationRNN.png" alt="Machine Translation Recurrent Neural Network" height="600">
+<img src="MachineTranslationRNN.png" alt="Machine Translation Recurrent Neural Network" height="600">
 
 - Train different RNN weights for encoding and decoding
 - Compute every hidden state in decoder from
@@ -417,7 +417,7 @@ $$
 
 ## Gated Recurrent Units
 
-<img src="../../source/fig/MachineTranslationGRU.png" alt="Machine Translation Gated Recurrent Units" height="150">
+<img src="MachineTranslationGRU.png" alt="Machine Translation Gated Recurrent Units" height="150">
 
 $$
 \begin{align*}
@@ -448,7 +448,7 @@ where $\circ$ means element-wise multiplication.
 ## Long-short-term-memories (LSTMs)
 > [Understanding LSTM Networks](http://colah.github.io/posts/2015-08-Understanding-LSTMs/)
 
-<img src="../../source/fig/MachineTranslationLSTMs.png" alt="LSTMs" height="300">
+<img src="MachineTranslationLSTMs.png" alt="LSTMs" height="300">
 
 $$
 \begin{align*}

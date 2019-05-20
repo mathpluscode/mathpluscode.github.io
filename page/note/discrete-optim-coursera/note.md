@@ -252,7 +252,7 @@ For this problem, if the primal has an optimal solution, the dual has an optimal
 
 ##### Exemple
 
-<img src="../../source/fig/Duality.png" alt="Duality" height="250">
+<img src="Duality.png" alt="Duality" height="250">
 
 It can be interpreted as:
 
@@ -543,7 +543,7 @@ $$s=\sum\limits_{j=m+1}(a_{ij}-\lfloor a_{1j}\rfloor) x_j - (b_1 - \lfloor b_1 \
 >
 > If we have all the cuts, we could use linear programming to solve the problem.
 
-<img src="../../source/fig/ConvexHull.png" alt="ConvexHull" height="250">
+<img src="ConvexHull.png" alt="ConvexHull" height="250">
 
 ### Cover Cuts
 
@@ -585,4 +585,4 @@ By replacing $z_j$ by $1-y_j$, it's a Knapsack problem.
 
 ### Column Generation
 
-[Column Generation for Cutting Stock](../../source/doc/DiscreteOptim-MIP-ColumnGeneration.pdf)
+[Column Generation for Cutting Stock](DiscreteOptim-MIP-ColumnGeneration.pdf)
