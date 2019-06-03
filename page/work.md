@@ -28,7 +28,7 @@ My main project was to use reinforcement learning to solve the bin packing probl
 
 Based on AlphaZero, a reinforcement learning algorithm designed for two-player games, we proposed Ranked Reward to enable self-playing training in single player games. Ranked Reward reshapes the rewards based on the agent's previous performances to create a relative metric. Without specific human knowledge, the proposed method achieves super-human performance and surpasses MCTS, supervised agent, heuristic algorithm, and commercial integer programming solver (Gurobi) on both 2D and 3D bin packing problems.
 
-This work is published ([arXiv](https://arxiv.org/abs/1807.01672)) as workshop paper in both [NeurIPS](https://sites.google.com/view/deep-rl-workshop-nips-2018/home) and [AAAI](http://aaai-rlg.mlanctot.info/papers/AAAI19-RLG-Paper13.pdf). I also received the research internship award from École Polytechnique, France.
+This work has been published ([arXiv](https://arxiv.org/abs/1807.01672)) as workshop paper in both [NeurIPS](https://sites.google.com/view/deep-rl-workshop-nips-2018/home) and [AAAI](http://aaai-rlg.mlanctot.info/papers/AAAI19-RLG-Paper13.pdf). I also received the research internship award from École Polytechnique, France.
 
 Besides the bin packing project, I participated in some other research projects as well, including evolutionary algorithms and auto machine learning. Specially, we presented our latest results on neural network architecture search at [Deep Learning Indaba 2018](http://www.deeplearningindaba.com/2018.html).
 
