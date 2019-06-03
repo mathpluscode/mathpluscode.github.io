@@ -19,6 +19,8 @@ Inspired by [(Zhong et al., 2018)](https://arxiv.org/abs/1809.03568), we propose
 
 In this project, sequential minimal optimization and augmented Lagrangian method are implemented to solve the dual problem of SVM. [Human Activity Recognition Dataset](https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones) is used to test multi-class kernel SVM performance and different kernels, optimization methods, multi-class methods, and regularization are studied.
 
+[Report](project/SVM.pdf)
+
 ## Playing Atari with Deep Reinforcement Learning
 
 > Research Project at Ecole Polytechnique, Oct. 2017 - Mar. 2018.
