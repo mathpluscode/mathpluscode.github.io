@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Notes
+title: MOOC Notes
 ---
 
 # MOOC Notes
