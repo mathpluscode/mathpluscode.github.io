@@ -4,4 +4,6 @@ description: Keep learning and practicing :)
 show_downloads: false
 markdown: kramdown
 kramdown:
-  input:         GFM
+  input: GFM
+github:
+  repository_url: "https://mcts.xyz/"

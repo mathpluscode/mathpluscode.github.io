@@ -1,10 +1,9 @@
 ---
-layout: default
-title: Work
+layout: page
+title: Work / Research Experience
 ---
 
-
-# Work / Research Experience
+# Experience
 
 ## M.Sc. Student @ Centre for Medical Image Computing (CMIC), UCL
 

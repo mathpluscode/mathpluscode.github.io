@@ -1,9 +1,7 @@
 ---
-layout: default
-title: Projects
+layout: page
+title: Course Projects
 ---
-
-# Course Projects
 
 ## Improving Question Answering with Knowledge Graphs
 
@@ -13,6 +11,8 @@ Inspired by [(Zhong et al., 2018)](https://arxiv.org/abs/1809.03568), we propose
 
 [Report](project/CommonsenseQA.pdf)
 
+---
+
 ## Human Activity Recognition with SVM
 
 > Numerical Optimization Course Project at UCL, May 2019 - May 2019.
@@ -20,6 +20,8 @@ Inspired by [(Zhong et al., 2018)](https://arxiv.org/abs/1809.03568), we propose
 In this project, sequential minimal optimization and augmented Lagrangian method are implemented to solve the dual problem of SVM. [Human Activity Recognition Dataset](https://www.kaggle.com/uciml/human-activity-recognition-with-smartphones) is used to test multi-class kernel SVM performance and different kernels, optimization methods, multi-class methods, and regularization are studied.
 
 [Report](project/SVM.pdf)
+
+---
 
 ## Playing Atari with Deep Reinforcement Learning
 
@@ -29,6 +31,8 @@ This project is mainly based on [(Oh et al., 2015)](https://arxiv.org/abs/1507.0
 
 [Report](project/Atari.pdf)
 
+---
+
 ## Link Prediction in Citation Networks
 
 > NLP Course Project at Ecole Polytechnique, Feb. 2018 - Mar. 2018.
@@ -36,6 +40,8 @@ This project is mainly based on [(Oh et al., 2015)](https://arxiv.org/abs/1507.0
 In this project, we extract both structure-based (neighbourhood, node2vec) and node-based (word2vec, doc2vec) features to perform link prediction in citation networks. Different neural network as well as tree-based algorithms (Xgboost, LightGBM) are compared.
 
 [Report](project/LinkPred.pdf)
+
+---
 
 ## Hacking the Paris metro
 > Big Data Course Project at Ecole Polytechnique, May 2017 - Jun. 2017.
@@ -46,6 +52,8 @@ Basic machine learning algorithms (SVM, Decision Tree, etc.) are applied to pred
 
 [GitHub](https://github.com/mathpluscode/2A-INF442-Project#hacking-the-paris-metro)
 
+---
+
 ## Lotus Effect and Spinodal Decomposition Phenomenon
 > Numerical Simulation of PDE Course Project at Ecole Polytechnique, Apr. 2017 - Jun. 2017.
 
@@ -55,6 +63,8 @@ Basic machine learning algorithms (SVM, Decision Tree, etc.) are applied to pred
 This project studies lotus effect and spinodal decomposition phenomenon using finite difference method (FDM).
 
 [Report](project/lotus/report.pdf)
+
+---
 
 ## Underground Explosion
 

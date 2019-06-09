@@ -1,6 +1,7 @@
 ---
 layout: default
 title: MathPlusCode
+index: true
 ---
 
 # About
@@ -12,7 +13,6 @@ I am an M.Sc. [CSML](http://www.cs.ucl.ac.uk/prospective_students/msc_computatio
 - [Work / Research Experience](page/work)
 - [Course Projects](page/projects)
 - [Research Notes](page/research)
-- [MOOC Notes](page/mooc)
 
 # More
 
