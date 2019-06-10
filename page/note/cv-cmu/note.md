@@ -7,11 +7,12 @@ title: Computer Vision
 # Computer Vision (CMU)
 
 > [http://www.cs.cmu.edu/~16385/](http://www.cs.cmu.edu/~16385/)
+>
+> [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/)
+>
+> [Multiple View Geometry](http://cvrs.whu.edu.cn/downloads/ebooks/Multiple%20View%20Geometry%20in%20Computer%20Vision%20(Second%20Edition).pdf) (best reference for geometry and vision)
 
-# References
-
-- [Computer Vision: Algorithms and Applications](http://szeliski.org/Book/)
-- [Multiple View Geometry](http://cvrs.whu.edu.cn/downloads/ebooks/Multiple%20View%20Geometry%20in%20Computer%20Vision%20(Second%20Edition).pdf) (best reference for geometry and vision)
+---
 
 # Image processing
 

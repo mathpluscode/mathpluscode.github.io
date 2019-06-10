@@ -4,8 +4,6 @@ math: true
 title: Graph Neural Networks
 ---
 
-# Graph Neural Networks
-
 ## Background
 
 ### Fourier Analysis
