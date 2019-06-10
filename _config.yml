@@ -1,9 +1,11 @@
 theme: jekyll-theme-cayman
 title: MathPlusCode
-description: Keep learning and practicing :)
 show_downloads: false
 markdown: kramdown
 kramdown:
   input: GFM
+google_analytics: "UA-141647157-1"
 github:
   repository_url: "https://mcts.xyz/"
+social:
+  twitter: "https://twitter.com/mathpluscode"
