@@ -68,7 +68,7 @@ This project studies lotus effect and spinodal decomposition phenomenon using fi
 
 ## Underground Explosion
 
-> Concurrency Course Project at Ecole Polytechnique, Apr. 2017 - Mar. 2017.
+> Concurrency Course Project at Ecole Polytechnique, Apr. 2017 - May 2017.
 
 <img src="project/seism/Snapshots.gif" alt="Snapshots" height="200">
 
