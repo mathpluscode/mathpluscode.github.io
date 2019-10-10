@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Work / Research Experience
+title: Work Experience / Publications
 ---
 
 # Experience

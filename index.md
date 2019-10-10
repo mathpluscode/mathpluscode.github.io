@@ -10,7 +10,7 @@ I am currently working on deep reinforcement learning at [InstaDeep](https://www
 
 # Pages
 
-- [Work / Research Experience](page/work)
+- [Work Experience / Publications](page/work)
 - [Course Projects](page/projects)
 - [Research Notes](page/research)
 
