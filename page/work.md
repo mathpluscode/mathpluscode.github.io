@@ -41,7 +41,7 @@ Besides the bin packing project, I participated in some other research projects 
 
 > **Yunguan Fu**, Maria R. Robu, Bongjin Koo, Crispin Schneider, Stijn van Laarhoven, Danail Stoyanov, Brian Davidson, Matthew J. Clarkson, Yipeng Hu
 >
-> Accepted to MICCAI 2019 Medical Image Learning with Less Labels and Imperfect Data Workshop, [arXiv](https://arxiv.org/abs/1908.08035)
+> Accepted to MICCAI 2019 Medical Image Learning with Less Labels and Imperfect Data Workshop (acceptance rate is 35%), [arXiv](https://arxiv.org/abs/1908.08035)
 
 - Implemented image segmentation using U-Net and semi-supervised Mean Teacher model for laparoscopic images.
 - Demonstrated that the specific training method of Mean Teacher is responsible for the performance improvement besides the additional unlabeled data.
