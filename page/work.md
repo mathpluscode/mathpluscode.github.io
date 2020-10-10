@@ -5,27 +5,33 @@ title: Work Experience / Publications
 
 # Experience
 
-## Researcher Engineear @ InstaDeep
+## Researcher Engineer @ InstaDeep
 
 > Full-time, Sep. 2019 - present.
 
-I am working on the development of our reinforcement-learning-based decision-making product.
+- Leading the R&D of reinforcement-learning and simulator for DeepPCB.
 
 > Part-time, Oct. 2018 - Sep. 2019.
 
-I participated in the development of our reinforcement-learning-based decision-making product. I worked on the neural network design and experimental comparisons with mainstream reinforcement learning algorithms (PPO, AlphaZero, etc.). Previously, I developed a novel model-free algorithm which outperformed plain Monte-Carlo tree search (MCTS).
-
-During 2018, my principal project was to extend the research results of [Ranked Reward](https://arxiv.org/abs/1807.01672) to [glass cutting optimization problem](http://www.roadef.org/challenge/2018/en/index.php), an industrial combinatorial optimization problem. Among all participants, our solution was the only one which did not depend on traditional optimization techniques and we ranked 16 out of 60 teams.
+- Participated in the R&D of DeepPCB on mainstream RL algorithms comparison.
+- Designed and implemented a novel model-free RL algorithm, which outperformed the plain Monte-Carlo tree search (MCTS).
+- Extended the bin packing results to solve the [glass cutting optimization problem](http://www.roadef.org/challenge/2018/en/index.php) using RL and we ranked 16 out of 60 teams.
+- Led the research and prototype development of NLP (question answering, text summarization).
 
 > Internship, Feb. 2018 - Sep. 2018.
 
-My main project was to use reinforcement learning to solve the bin packing problem, which is an NP-hard combinatorial problem. The objective of bin packing is to place boxes in containers efficiently, i.e. minimizing the waste of space, while respecting multiple physical constraints.
+- Implemented RL algorithms to solve the bin packing problem.
+- Developed ranked reward and outperformed the commercial solver (Gurobi), heuristic algorithms in both 2D and 3D bin packing problems.
+- Studied deep RL in auto machine learning (neural network architecture search).
+- Studied evolutionary algorithms in combinatorial optimization problems (TSP).
+- Received the research internship award from École Polytechnique.
 
-Based on AlphaZero, a reinforcement learning algorithm designed for two-player games, we proposed Ranked Reward to enable self-playing training in single-player games. Ranked Reward reshapes the rewards based on the agent's previous performances to create a relative metric. Without specific human knowledge, the proposed method achieves super-human performance and surpasses MCTS, supervised agent, heuristic algorithm, and commercial integer programming solver (Gurobi) on both 2D and 3D bin packing problems.
+## Honorary Research Assistant @ Medical Physics & Biomedical Engineering, University College London
 
-This work has been published ([arXiv](https://arxiv.org/abs/1807.01672)) as workshop paper in both [NeurIPS](https://sites.google.com/view/deep-rl-workshop-nips-2018/home) and [AAAI](http://aaai-rlg.mlanctot.info/papers/AAAI19-RLG-Paper13.pdf). I also received the research internship award from École Polytechnique, France.
+> Nov. 2019 - present.
 
-Besides the bin packing project, I participated in some other research projects as well, including evolutionary algorithms and auto machine learning. Specially, we presented our latest results on neural network architecture search at [Deep Learning Indaba 2018](http://www.deeplearningindaba.com/2018.html).
+- Leading the R&D of DeepReg, an open-source project for image registration base on TensorFlow v2.
+- Studied neural network calibration on COVID-19 X-Ray images.
 
 ## Operations Research Analyst @ SNCF Réseau
 
@@ -36,6 +42,15 @@ Besides the bin packing project, I participated in some other research projects 
 - Outperformed human experts and approached the performance of LocalSolver.
 
 # Publication
+
+## Longitudinal Image Registration with Temporal-Order and Subject-Specificity Discrimination
+
+> Qianye Yang, **Yunguan Fu**, Francesco Giganti, Nooshin Ghavami, Qingchao Chen, J Alison Noble, Tom Vercauteren, Dean Barratt, Yipeng Hu
+>
+> Accepted as a conference paper to MICCAI 2020, [arXiv](https://arxiv.org/abs/2008.13002).
+
+- Applied deep registration for clinical longitudinal data using staged sampling.  
+- Demonstrated that an MMD loss to penalize the divergence of data representations from different sampling strategies can improve the registration performance. 
 
 ## More unlabelled data or label more data? A study on semi-supervised laparoscopic image segmentation
 
