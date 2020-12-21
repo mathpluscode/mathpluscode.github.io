@@ -16,7 +16,7 @@ Meanwhile, I am working with [Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/prof
 - In October 2020, the tutorial [Introduction to Medical Image Registration with DeepReg, between Old and New](https://colab.research.google.com/github/DeepRegNet/DeepReg/blob/main/docs/Intro_to_Medical_Image_Registration.ipynb) based on [DeepReg](https://github.com/DeepRegNet/DeepReg), 
 has [won the first place](https://twitter.com/MiccaiStudents/status/1313874138797346816?s=20) in the [MICCAI 2020 Educational Challenge](https://miccai-sb.github.io/materials.html). 
 - In September 2020, with an amazing collaboration across multiple universities, we have released [DeepReg](https://github.com/DeepRegNet/DeepReg), 
-an open-sourced package for medical image registration  based on TensorFlow 2.x. It is now [under review](https://github.com/openjournals/joss-reviews/issues/2705) for the Journal of Open Source Software (JOSS).
+an open-sourced package for medical image registration based on TensorFlow 2.x. It is now [published](https://doi.org/10.21105/joss.02705) at the Journal of Open Source Software (JOSS).
 - In June 2020, the paper "[Longitudinal Image Registration with Temporal-Order and Subject-Specificity Discrimination](https://arxiv.org/abs/2008.13002)" 
 I co-authored has been accepted as a conference paper at MICCAI 2020.
 - In October 2019, I presented the paper "[More unlabelled data or label more data? A study on semi-supervised laparoscopic image segmentation](https://link.springer.com/chapter/10.1007/978-3-030-33391-1_20)" 
