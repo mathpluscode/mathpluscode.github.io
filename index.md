@@ -6,51 +6,17 @@ description: Keep learning and practicing :)
 
 # About
 
-I am currently working at [InstaDeep](https://www.instadeep.com/) as a research
-engineer.
+I am leading multiple R&D teams for bioinformatics project at [InstaDeep](https://www.instadeep.com/) BioAI department.
+**I am hiring [research engineers](https://instadeep.bamboohr.com/jobs/view.php?id=163) and [machine learning engineers](https://instadeep.bamboohr.com/jobs/view.php?id=170&source=other) at London and Paris.**
 
 Meanwhile, I am working with
 [Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/profile?upi=YHUXX66) on medical imaging
-as an honorary research assistant at UCL.
-
-# Updates
-
-- In January 2021, the paper
-  "[Morphological Change Forecasting for Prostate Glands using Feature-based Registration and Kernel Density Extrapolation](https://arxiv.org/abs/2101.06425)"
-  I co-authored has been accepted as a conference paper at
-  [ISBI 2021](https://biomedicalimaging.org/2021/).
-- In October 2020, the tutorial
-  [Introduction to Medical Image Registration with DeepReg, between Old and New](https://colab.research.google.com/github/DeepRegNet/DeepReg/blob/main/docs/Intro_to_Medical_Image_Registration.ipynb)
-  based on [DeepReg](https://github.com/DeepRegNet/DeepReg), has
-  [won the first place](https://twitter.com/MiccaiStudents/status/1313874138797346816?s=20)
-  in the
-  [MICCAI 2020 Educational Challenge](https://miccai-sb.github.io/materials.html).
-- In September 2020, with an amazing collaboration across multiple universities, we have
-  released [DeepReg](https://github.com/DeepRegNet/DeepReg), an open-sourced package for
-  medical image registration based on TensorFlow 2.x.
-
-  The whitepaper
-  "[DeepReg: a deep learning toolkit for medical image registration](https://doi.org/10.21105/joss.02705)"
-  is published at the [Journal of Open Source Software (JOSS)](https://joss.theoj.org/).
-
-- In June 2020, the paper
-  "[Longitudinal Image Registration with Temporal-Order and Subject-Specificity Discrimination](https://arxiv.org/abs/2008.13002)"
-  I co-authored has been accepted as a conference paper at MICCAI 2020.
-- In October 2019, I presented the paper
-  "[More unlabelled data or label more data? A study on semi-supervised laparoscopic image segmentation](https://link.springer.com/chapter/10.1007/978-3-030-33391-1_20)"
-  at MICCAI 2019
-  [Medical Image Learning with Less Labels and Imperfect Data workshop](https://www.hvnguyen.com/lesslabelsimperfectdataml).
-  ([arXiv](https://arxiv.org/abs/1908.08035),
-  [Slides](page/research/liver-seg-slides.pdf))
-
-# Pages
-
-- [Work Experience / Publications](page/work)
-- [Course Projects](page/projects)
+as an honorary research assistant at UCL [Computer Assisted Navigation, Diagnosis and Intervention (CANDI) research group](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/research/research-groups/computer-assisted-navigation-diagnosis-and-intervention-candi).
 
 # More
 
 - [ORCID](https://orcid.org/0000-0002-1184-7421)
+- [Google Scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en)
 - [publons](https://publons.com/researcher/4200658/yunguan-fu)
 - [GitHub](https://github.com/mathpluscode)
 - [LinkedIn](https://www.linkedin.com/in/yunguanfu)
