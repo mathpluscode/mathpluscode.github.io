@@ -1,6 +1,6 @@
 ---
 layout: default
-title: MathPlusCode
+title: Yunguan Fu
 description: Keep learning and practicing :)
 ---
 
