@@ -17,6 +17,7 @@ as an honorary research assistant at UCL [Computer Assisted Navigation, Diagnosi
 
 - [ORCID](https://orcid.org/0000-0002-1184-7421)
 - [Google Scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en)
+- [Semantic Scholar](https://www.semanticscholar.org/author/51123416)
 - [publons](https://publons.com/researcher/4200658/yunguan-fu)
 - [GitHub](https://github.com/mathpluscode)
 - [LinkedIn](https://www.linkedin.com/in/yunguanfu)
