@@ -6,8 +6,9 @@ description: Keep learning and practicing :)
 
 # About
 
-I am leading multiple R&D teams for bioinformatics project at [InstaDeep](https://www.instadeep.com/) BioAI department.
-**I am hiring [research engineers](https://instadeep.bamboohr.com/jobs/view.php?id=163) and [machine learning engineers](https://instadeep.bamboohr.com/jobs/view.php?id=170&source=other) at London and Paris.**
+I am a senior research engineer at [InstaDeep](https://www.instadeep.com/), currently leading multiple R&D teams for bioinformatics projects at BioAI department in collaboration with [BioNTech](https://www.biontech.com).
+
+In particular, I am leading the research and product development for our coronavirus early warning system ([Preprint](https://www.biorxiv.org/content/10.1101/2021.12.24.474095v1), [InstaDeep announcement](https://www.instadeep.com/2022/01/biontech-and-instadeep-developed-and-successfully-tested-early-warning-system-to-detect-potential-high-risk-sars-cov-2-variants/), [BioNTech announcement](https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early)). To further deepen the research and improve this product, I am currently hiring [Bioinformatics Scientists/Analysts](https://instadeep.bamboohr.com/jobs/view.php?id=199) and [Software/Machine Learning Engineers](https://instadeep.bamboohr.com/jobs/view.php?id=240&source=bamboohr) in UK/Europe.
 
 Meanwhile, I am working with
 [Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/profile?upi=YHUXX66) on medical imaging
