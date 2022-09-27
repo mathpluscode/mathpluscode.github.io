@@ -13,9 +13,8 @@ I am a senior research engineer at [InstaDeep](https://www.instadeep.com/), curr
 
 In particular, I am leading the research and product development for our coronavirus early warning system ([Preprint](https://www.biorxiv.org/content/10.1101/2021.12.24.474095v1), [InstaDeep announcement](https://www.instadeep.com/2022/01/biontech-and-instadeep-developed-and-successfully-tested-early-warning-system-to-detect-potential-high-risk-sars-cov-2-variants/), [BioNTech announcement](https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early)).
 
-Meanwhile, I am working with
-[Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/profile?upi=YHUXX66) on medical imaging
-as an honorary research assistant at UCL [Computer Assisted Navigation, Diagnosis and Intervention (CANDI) research group](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/research/research-groups/computer-assisted-navigation-diagnosis-and-intervention-candi).
+I am also a PhD student working with
+[Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/profile?upi=YHUXX66) on graph neural networks and medical imaging at UCL [Computer Assisted Navigation, Diagnosis and Intervention (CANDI) research group](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/research/research-groups/computer-assisted-navigation-diagnosis-and-intervention-candi).
 
 # More
 
