@@ -22,7 +22,6 @@ I am also a PhD student working with
 - [Google Scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en)
 - [Semantic Scholar](https://www.semanticscholar.org/author/51123416)
 - [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57212006248)
-- [Web of Science](https://www.webofscience.com/wos/author/record/AAD-8076-2021)
 - [GitHub](https://github.com/mathpluscode)
 - [LinkedIn](https://www.linkedin.com/in/yunguanfu)
 - [Twitter](https://twitter.com/mathpluscode)
