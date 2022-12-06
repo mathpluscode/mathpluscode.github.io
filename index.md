@@ -6,6 +6,8 @@ description: Keep learning and practicing :)
 
 # About
 
+> Update: Our latest work on **peptide-MHC protein structure prediction with graph neural network** is accepted at [NeurIPS Machine Learning in Structural Biology Workshop](https://www.mlsb.io/)! Check the [poster](https://nips.cc/media/PosterPDFs/NeurIPS%202022/59015.png?t=1668101005.7173755) and [paper](https://www.biorxiv.org/content/10.1101/2022.11.23.517618v1)!
+
 I am a senior research engineer from the Department of BioAI at [InstaDeep](https://www.instadeep.com/), currently managing multiple R&D teams for bioinformatics projects in collaboration with [BioNTech](https://www.biontech.com).
 In particular, we are monitoring the SARS-CoV-2 pandemic with the Early Warning System ([Preprint](https://www.biorxiv.org/content/10.1101/2021.12.24.474095v2), [InstaDeep announcement](https://www.instadeep.com/2022/01/biontech-and-instadeep-developed-and-successfully-tested-early-warning-system-to-detect-potential-high-risk-sars-cov-2-variants/), [BioNTech announcement](https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early)).
 **I am actively hiring [Senior Research Engineer](https://instadeep.bamboohr.com/jobs/view.php?id=253), [Research Engineer](https://instadeep.bamboohr.com/jobs/view.php?id=267), and [Computational Biologist](https://instadeep.bamboohr.com/jobs/view.php?id=262) in London.**
