@@ -7,6 +7,7 @@
 
 {% seo %}
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
     <!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
     <![endif]-->
@@ -23,12 +24,9 @@
         <p>{{ site.description | default: site.github.project_tagline }}</p>
 
         {% if site.github.is_user_page %}
-        <p class="view"><a href="{{ site.social.orcid}}">ORCID</a></p>
-        <p class="view"><a href="{{ site.social.google_scholar}}">Google Scholar</a></p>
-        <p class="view"><a href="{{ site.social.semantic_scholar}}">Semantic Scholar</a></p>
-        <p class="view"><a href="{{ site.social.twitter}}">Twitter</a></p>
-        <p class="view"><a href="{{ site.social.linkedin}}">LinkedIn</a></p>
-        <p class="view"><a href="{{ site.social.github}}">GitHub</a></p>
+        <a href="{{ site.social.orcid}}" target="_blank"><i class="ai ai-orcid-square ai-2x" aria-hidden="true"></i></a>
+        <a href="{{ site.social.google_scholar}}" target="_blank"><i class="ai ai-google-scholar-square ai-2x" aria-hidden="true"></i></a>
+        <a href="{{ site.social.semantic_scholar}}" target="_blank"><i class="ai ai-semantic-scholar-square ai-2x" aria-hidden="true"></i></a>
         {% endif %}
       </header>
       <section>
