@@ -2,8 +2,6 @@
 layout: default
 ---
 
-# About
-
 > Update: Our latest work on **peptide-MHC protein structure prediction with graph neural network** is accepted at [NeurIPS Machine Learning in Structural Biology Workshop](https://www.mlsb.io/)! Check the [poster](https://nips.cc/media/PosterPDFs/NeurIPS%202022/59015.png?t=1668101005.7173755) and [paper](https://www.biorxiv.org/content/10.1101/2022.11.23.517618v1)!
 
 I am a senior research engineer from the Department of BioAI at [InstaDeep](https://www.instadeep.com/), currently managing multiple R&D teams for bioinformatics projects in collaboration with [BioNTech](https://www.biontech.com).
@@ -11,13 +9,3 @@ In particular, we are monitoring the SARS-CoV-2 pandemic with the Early Warning 
 **I am actively hiring [Senior Research Engineer](https://instadeep.bamboohr.com/jobs/view.php?id=253), [Research Engineer](https://instadeep.bamboohr.com/jobs/view.php?id=267), and [Computational Biologist](https://instadeep.bamboohr.com/jobs/view.php?id=262) in London.**
 
 I am also a PhD student and [Honorary Research Assistant](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/people/honorary-staff) from the [Department of Medical Physics and Biomedical Engineering](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) at University College London, under the supervision of [Associate Professor Yipeng Hu](https://iris.ucl.ac.uk/iris/browse/profile?upi=YHUXX66). My research interests focus on geometric deep learning in medical imaging. More about my research can be found at [google scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en).
-
-# More
-
-- [ORCID](https://orcid.org/0000-0002-1184-7421)
-- [Google Scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en)
-- [Semantic Scholar](https://www.semanticscholar.org/author/51123416)
-- [Scopus](https://www.scopus.com/authid/detail.uri?authorId=57212006248)
-- [GitHub](https://github.com/mathpluscode)
-- [LinkedIn](https://www.linkedin.com/in/yunguanfu)
-- [Twitter](https://twitter.com/mathpluscode)
