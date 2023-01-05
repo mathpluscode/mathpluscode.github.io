@@ -1,4 +1,4 @@
-theme: jekyll-theme-cayman
+theme: jekyll-theme-minima
 title: MathPlusCode
 show_downloads: false
 markdown: kramdown
