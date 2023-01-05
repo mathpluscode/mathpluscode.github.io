@@ -1,7 +1,5 @@
 ---
 layout: default
-title: Yunguan Fu
-description: Keep learning and practicing :)
 ---
 
 # About
