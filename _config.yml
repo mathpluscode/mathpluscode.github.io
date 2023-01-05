@@ -6,7 +6,12 @@ markdown: kramdown
 kramdown:
   input: GFM
 google_analytics: "UA-141647157-1"
-github:
-  repository_url: "https://mathpluscode.com/"
 social:
+  orcid: "https://orcid.org/0000-0002-1184-7421"
+  google_scholar: "https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en"
+  semantic_scholar: "https://www.semanticscholar.org/author/51123416"
   twitter: "https://twitter.com/mathpluscode"
+  linkedin: "https://www.linkedin.com/in/yunguanfu"
+  github: "https://github.com/mathpluscode/"
+
+  
