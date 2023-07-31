@@ -2,12 +2,10 @@
 layout: default
 ---
 
-> Update: BioNTech to acquire InstaDeep to strengthen pioneering position in the field of AI-powered drug discovery, design and development ([InstaDeep announcement](https://www.instadeep.com/2023/01/biontech-to-acquire-instadeep-to-strengthen-pioneering-position-in-the-field-of-ai-powered-drug-discovery-design-and-development/), [BioNTech announcement](https://investors.biontech.de/news-releases/news-release-details/biontech-acquire-instadeep-strengthen-pioneering-position-field))!
+## @InstaDeep @BioNTech
 
-## @InstaDeep
-
-I am a senior research engineer from the Department of BioAI at [InstaDeep](https://www.instadeep.com/), currently managing multiple R&D teams for bioinformatics projects in collaboration with [BioNTech](https://www.biontech.com).
-In particular, we are monitoring the SARS-CoV-2 pandemic with the Early Warning System ([Paper](https://www.sciencedirect.com/science/article/pii/S0010482523000835), [InstaDeep announcement](https://www.instadeep.com/2022/01/biontech-and-instadeep-developed-and-successfully-tested-early-warning-system-to-detect-potential-high-risk-sars-cov-2-variants/), [BioNTech announcement](https://investors.biontech.de/news-releases/news-release-details/biontech-and-instadeep-developed-and-successfully-tested-early)).
+I am a senior research engineer from the Department of BioAI at [InstaDeep](https://www.instadeep.com/) ([now part of BioNTech](https://www.instadeep.com/2023/07/biontech-completes-acquisition-of-instadeep/)), currently managing multiple R&D teams for bioinformatics projects.
+In particular, we are monitoring the SARS-CoV-2 pandemic with the Early Warning System ([Paper](https://www.biorxiv.org/content/10.1101/2021.12.24.474095v2](https://www.sciencedirect.com/science/article/pii/S0010482523000835))).
 
 ## @UCL
 
