@@ -10,6 +10,6 @@ I am a senior research engineer from the Department of BioAI at [InstaDeep](http
 
 ## @UCL
 
-> :raised_hands: Our new paper [A Recycling Training Strategy for Medical Image Segmentation with Diffusion Denoising Models](https://arxiv.org/abs/2308.16355) has been updated and the JAX/FLAX-based code base is available at [ImgX-DiffSeg](https://github.com/mathpluscode/ImgX-DiffSeg)!
+> :raised_hands: Our new paper [A Recycling Training Strategy for Medical Image Segmentation with Diffusion Denoising Models](https://www.melba-journal.org/papers/2023:016.html) has been published in [machine learning for biomedical imaging journal (MELBA)](https://www.melba-journal.org/) and the JAX/FLAX-based code base is available at [ImgX-DiffSeg](https://github.com/mathpluscode/ImgX-DiffSeg)!
 
 I am also a PhD student and [Honorary Research Assistant](https://profiles.ucl.ac.uk/76116-yunguan-fu) from the [Department of Medical Physics and Biomedical Engineering](https://www.ucl.ac.uk/medical-physics-biomedical-engineering/) at University College London, under the supervision of [Associate Professor Yipeng Hu](https://profiles.ucl.ac.uk/5178-yipeng-hu). My research interests focus on deep learning in medical imaging. More about my research can be found at [google scholar](https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en).
