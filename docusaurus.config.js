@@ -23,6 +23,7 @@ const config = {
   organizationName: "mathpluscode", // Usually your GitHub org/user name.
   projectName: "mathpluscode.github.io", // Usually your repo name.
   deploymentBranch: "gh-pages", // The branch of your docs repo that you are publishing to GitHub pages
+  trailingSlash: false,
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
