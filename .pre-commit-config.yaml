@@ -1,6 +1,6 @@
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v3.4.0
+    rev: v4.5.0
     hooks:
       - id: check-ast # Simply check whether the files parse as valid python
       - id: check-case-conflict # Check for files that would conflict in case-insensitive filesystems
@@ -16,6 +16,6 @@ repos:
       - id: mixed-line-ending # Replace or checks mixed line ending
       - id: trailing-whitespace # This hook trims trailing whitespace
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v2.2.1
+    rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
