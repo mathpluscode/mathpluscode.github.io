@@ -28,7 +28,8 @@ Start the development server
 npm run start
 ```
 
-The deployment on GitHub pages is done using GitHub Actions.
+The deployment on GitHub pages is done using
+[GitHub Actions](https://github.com/mathpluscode/mathpluscode.github.io/actions).
 
 ## Code Formatting
 
