@@ -1,44 +1,57 @@
-# Website
+# Local Development
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
-### Installation
+## Website Development
 
-```
-$ yarn
-```
+For Mac, install `node` using [`brew`](https://formulae.brew.sh/formula/node).
 
-### Local Development
-
-```
-$ yarn start
+```bash
+brew install node
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without
-having to restart the server.
+Then install the packages
 
-### Build
-
-```
-$ yarn build
+```bash
+npm install
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting
-service.
+Optionally run the following command to update the packages
 
-### Deployment
-
-Using SSH:
-
-```
-$ USE_SSH=true yarn deploy
+```bash
+npm audit fix
 ```
 
-Not using SSH:
+Start the development server
 
-```
-$ GIT_USER=<Your GitHub username> yarn deploy
+```bash
+npm run start
 ```
 
-If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the
-`gh-pages` branch.
+The deployment on GitHub pages is done using GitHub Actions.
+
+## Code Formatting
+
+Pre-commit hooks are used to format the code. Install the pre-commit hooks using the following command.
+
+```bash
+pip install pre-commit
+```
+
+Then run the following command to install the pre-commit hooks.
+
+```bash
+pre-commit install
+```
+
+Run the following command to update pre-commit hooks.
+
+```bash
+pre-commit autoupdate
+```
+
+Run the following command to run the pre-commit hooks against all files.
+
+```bash
+pre-commit run --all-files
+```

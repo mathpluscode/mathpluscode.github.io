@@ -57,26 +57,8 @@ const SectionList = [
         ),
       },
       {
-        title: "I am hiring!",
-        content: (
-          <span>
-            <p>
-              I am currently hiring the following roles at InstaDeep London and Paris offices:
-              <ul>
-                <li>
-                  <a href="https://www.instadeep.com/job-offer/8c0fb936-61b0-4569-acbf-cfefa05c3a61" target="_blank">
-                    (Senior) Research Engineers
-                  </a>
-                </li>
-                <li>
-                  <a href="https://www.instadeep.com/job-offer/d94bd2e9-5862-4af0-9568-c97d6265a741" target="_blank">
-                    Machine Learning Software Engineers
-                  </a>
-                </li>
-              </ul>
-            </p>
-          </span>
-        ),
+        title: "",
+        content: <span></span>,
       },
     ],
   },
