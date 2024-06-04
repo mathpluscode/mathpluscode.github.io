@@ -27,7 +27,11 @@ const SectionList = [
               <a href="https://www.instadeep.com/job-offer/7212d1ab-c33e-45f6-ab2e-182c22539217/" target="_blank">
                 data scientist
               </a>{" "}
-              with bioinformatics background to design proteins through lab experiments 🧪
+              and{" "}
+              <a href="https://www.instadeep.com/job-offer/989646ef-7450-465f-88bb-d41ac739f8ad/" target="_blank">
+                senior research engineer
+              </a>{" "}
+              with bioinformatics background to design proteins through wetlab experiments 🧪
             </p>
           </span>
         ),
