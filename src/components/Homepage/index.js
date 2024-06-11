@@ -10,7 +10,7 @@ const SectionList = [
     svg: "img/protein.svg",
     description: (
       <>
-        I am a senior research engineer from BioAI department at{" "}
+        I am a staff research engineer from BioAI department at{" "}
         <a href="https://www.instadeep.com" target="_blank">
           InstaDeep
         </a>{" "}
@@ -65,19 +65,23 @@ const SectionList = [
         content: (
           <span>
             <p>
-              I will give a talk about{" "}
-              <a href="https://www.melba-journal.org/papers/2023:016.html" target="_blank">
-                A Recycling Training Strategy for Medical Image Segmentation with Diffusion Denoising Models
-              </a>{" "}
-              at{" "}
+              I was invited to give a talk at the{" "}
               <a href="https://www.melba-journal.org/symposium.html" target="_blank">
                 machine learning for biomedical imaging journal (MELBA) symposium
               </a>
-              . JAX/FLAX-based code base is available at{" "}
-              <a href="https://github.com/mathpluscode/ImgX-DiffSeg" target="_blank">
-                GitHub
+              {' on "A Recycling Training Strategy for Medical Image Segmentation with Diffusion Denoising Models" ('}
+              <a href="https://github.com/mathpluscode/ImgX-DiffSeg/blob/main/MELBA_Symposium_2024.pdf" target="_blank">
+                slides
               </a>
-              !
+              {", "}
+              <a href="https://www.melba-journal.org/papers/2023:016.html" target="_blank">
+                paper
+              </a>
+              {", "}
+              <a href="https://github.com/mathpluscode/ImgX-DiffSeg" target="_blank">
+                code
+              </a>
+              {")"}.
             </p>
           </span>
         ),
