@@ -23,22 +23,36 @@ const SectionList = [
         content: (
           <span>
             <p>
-              I am hiring{" "}
-              <a href="https://www.instadeep.com/job-offer/7212d1ab-c33e-45f6-ab2e-182c22539217/" target="_blank">
-                data scientist
-              </a>{" "}
-              and{" "}
-              <a href="https://www.instadeep.com/job-offer/989646ef-7450-465f-88bb-d41ac739f8ad/" target="_blank">
-                senior research engineer
-              </a>{" "}
-              with bioinformatics background to design proteins through wetlab experiments 🧪
+              I was invited to give a flash talk at the{" "}
+              <a href="https://sites.google.com/view/hinxton-immunogenomics-2024" target="_blank">
+                Hinxton Immunogenomics Day
+              </a>
+              {' on "FrameDiPT: SE(3) Diffusion Model for Protein Structure Inpainting" ('}
+              <a href="https://www.biorxiv.org/content/10.1101/2023.11.21.568057v2" target="_blank">
+                paper
+              </a>
+              {", "}
+              <a href="https://github.com/instadeepai/FrameDiPT" target="_blank">
+                code
+              </a>
+              {")"}.
             </p>
           </span>
         ),
       },
       {
-        title: "",
-        content: <span></span>,
+        title: "Hiring",
+        content: (
+          <span>
+            <p>
+              I am hiring{" "}
+              <a href="https://www.instadeep.com/job-offer/989646ef-7450-465f-88bb-d41ac739f8ad/" target="_blank">
+                senior research engineer
+              </a>{" "}
+              with bioinformatics background to design proteins through wetlab experiments 🧪.
+            </p>
+          </span>
+        ),
       },
     ],
   },
