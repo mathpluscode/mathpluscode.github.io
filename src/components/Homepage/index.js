@@ -19,40 +19,12 @@ const SectionList = [
     ),
     gridblock: [
       {
-        title: "What's new?",
-        content: (
-          <span>
-            <p>
-              I was invited to give a flash talk at the{" "}
-              <a href="https://sites.google.com/view/hinxton-immunogenomics-2024" target="_blank">
-                Hinxton Immunogenomics Day
-              </a>
-              {' on "FrameDiPT: SE(3) Diffusion Model for Protein Structure Inpainting" ('}
-              <a href="https://www.biorxiv.org/content/10.1101/2023.11.21.568057v2" target="_blank">
-                paper
-              </a>
-              {", "}
-              <a href="https://github.com/instadeepai/FrameDiPT" target="_blank">
-                code
-              </a>
-              {")"}.
-            </p>
-          </span>
-        ),
+        title: "",
+        content: <span></span>,
       },
       {
-        title: "Hiring",
-        content: (
-          <span>
-            <p>
-              I am hiring{" "}
-              <a href="https://www.instadeep.com/job-offer/989646ef-7450-465f-88bb-d41ac739f8ad/" target="_blank">
-                senior research engineer
-              </a>{" "}
-              with bioinformatics background to design proteins through wetlab experiments 🧪.
-            </p>
-          </span>
-        ),
+        title: "",
+        content: <span></span>,
       },
     ],
   },
@@ -75,30 +47,8 @@ const SectionList = [
     ),
     gridblock: [
       {
-        title: "What's new?",
-        content: (
-          <span>
-            <p>
-              I was invited to give a talk at the{" "}
-              <a href="https://www.melba-journal.org/symposium.html" target="_blank">
-                machine learning for biomedical imaging journal (MELBA) symposium
-              </a>
-              {' on "A Recycling Training Strategy for Medical Image Segmentation with Diffusion Denoising Models" ('}
-              <a href="https://github.com/mathpluscode/ImgX-DiffSeg/blob/main/MELBA_Symposium_2024.pdf" target="_blank">
-                slides
-              </a>
-              {", "}
-              <a href="https://www.melba-journal.org/papers/2023:016.html" target="_blank">
-                paper
-              </a>
-              {", "}
-              <a href="https://github.com/mathpluscode/ImgX-DiffSeg" target="_blank">
-                code
-              </a>
-              {")"}.
-            </p>
-          </span>
-        ),
+        title: "",
+        content: <span></span>,
       },
       {
         title: "",
