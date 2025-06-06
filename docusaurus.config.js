@@ -85,7 +85,7 @@ const config = {
           },
           {
             label: "Google Scholar",
-            href: "https://scholar.google.co.uk/citations?user=8Uicv-gAAAAJ&hl=en",
+            href: "https://scholar.google.co.uk/citations?user=8X-IK9sAAAAJ&hl=en",
           },
           {
             label: "Semantic Scholar",
