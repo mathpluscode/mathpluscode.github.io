@@ -43,11 +43,7 @@ export default function Homepage() {
       <section className={styles.bioSection}>
         <p className={styles.bio}>
           Previously staff research engineer at{" "}
-          <a
-            href="https://www.instadeep.com"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://www.instadeep.com" target="_blank" rel="noreferrer">
             InstaDeep
           </a>{" "}
           (acquired by BioNTech).
@@ -66,11 +62,7 @@ export default function Homepage() {
           PhD on generative models for medical imaging at UCL.
           <br />
           Recent work includes a{" "}
-          <a
-            href="https://github.com/mathpluscode/CineMA"
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a href="https://github.com/mathpluscode/CineMA" target="_blank" rel="noreferrer">
             foundation model for cine cardiac MR images
           </a>
           .
@@ -86,13 +78,7 @@ export default function Homepage() {
 
       <section className={styles.cards}>
         {links.map(({ label, href, icon }) => (
-          <a
-            key={href}
-            className={styles.card}
-            href={href}
-            target="_blank"
-            rel="noreferrer"
-          >
+          <a key={href} className={styles.card} href={href} target="_blank" rel="noreferrer">
             <span className={styles.cardIcon}>{icon}</span>
             <span className={styles.cardTitle}>{label}</span>
           </a>
