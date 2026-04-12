@@ -14,18 +14,17 @@ There are no tests in this repo.
 
 ## Architecture
 
-This is a personal website built with **Docusaurus 3.6** (classic preset, JS — not TS), deployed to GitHub Pages at `mathpluscode.com`.
+This is a personal website built with Docusaurus (classic preset, JS — not TS), deployed to GitHub Pages at `mathpluscode.com`. Check `package.json` for the exact Docusaurus version and read `docusaurus.config.js` for current site config — don't assume docs/blog plugins are enabled, they may be disabled.
 
-- `docusaurus.config.js` — site config: URL, navbar, footer, prism themes, color mode. `onBrokenLinks: "throw"` means broken links fail the build.
-- `src/pages/index.js` — homepage entry, rendered as a custom React page (not from `docs/`). Uses `src/components/Homepage` for the main content grid.
-- `src/components/Homepage/` — `GridBlock.js` is the reusable card; `index.js` composes the homepage layout.
-- `docs/` — Docusaurus docs content (currently just `intro.md`); `sidebars.js` defines the sidebar.
-- `static/` — copied verbatim into the build root. `static/CNAME` controls the GitHub Pages custom domain — do not delete it.
-- `src/css/custom.css` — global theme overrides.
+A few invariants worth knowing that you can't derive quickly from the tree:
+
+- `onBrokenLinks: "throw"` in the Docusaurus config means broken internal links fail the build, not just warn.
+- `static/` is copied verbatim into the build root. `static/CNAME` controls the GitHub Pages custom domain — do not delete it.
+- The homepage is a custom React page under `src/pages/`, not generated from Markdown.
 
 ## Deployment
 
-Pushes to `main` trigger `.github/workflows/deploy.yml`, which runs `npm ci && npm run build` and publishes `./build` to the `gh-pages` branch via `peaceiris/actions-gh-pages`. PRs run `test-deploy.yml` to verify the build. Do not run `npm run deploy` locally — deployment is automated.
+Deployment is fully automated via GitHub Actions — pushes to `main` build and publish to the `gh-pages` branch, and PRs run a build-only check. See `.github/workflows/` for current details. Do not run `npm run deploy` locally.
 
 ## Formatting
 

@@ -4,7 +4,6 @@
  * work well for content-centric websites.
  */
 
-/* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
   --ifm-color-primary-dark: #29784c;
@@ -14,97 +13,13 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --light-bg-color: #ffffff;
-  --dark-bg-color: #f5f6f7;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme="dark"] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  --light-bg-color: #242526;
-  --dark-bg-color: #242526;
+.navbar,
+.footer {
+  display: none;
 }
 
-/* Content */
-.homePage.mainContainer {
+.main-wrapper {
   padding-top: 0;
-  padding-bottom: 0;
-}
-
-/* Text section */
-
-.lightBackground {
-  background-color: var(--light-bg-color);
-}
-
-.darkBackground {
-  background-color: var(--dark-bg-color);
-}
-
-.textSection {
-  margin: 0 auto;
-  max-width: var(--ifm-container-width);
-}
-
-.textSection .wrapper {
-  padding: 4em 20px;
-}
-
-.textSection h2 {
-  margin-top: 0;
-  font-size: 2.5rem;
-}
-
-.textSection .blockElement {
-  margin: 0 30px;
-}
-
-.textSection .gridBlock > .blockElement:first-child {
-  margin-left: 0;
-}
-
-.textSection .blockContent h2 {
-  font-size: 1.5rem;
-}
-
-@media only screen and (min-width: 769px) {
-  .gridBlock {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
-  .gridBlock > * {
-    margin: 0 24px 0 0;
-  }
-
-  .gridBlock .twoByGridBlock {
-    flex: 1 0 40%;
-  }
-
-  .gridBlock .threeByGridBlock {
-    flex: 1 0 26%;
-  }
-
-  .gridBlock .fourByGridBlock {
-    flex: 1 0 20%;
-  }
-
-  h2 + .gridBlock {
-    padding-top: 20px;
-  }
-}
-
-@media (max-width: 996px) {
-  .textSection .blockElement {
-    margin-left: 0;
-  }
 }
