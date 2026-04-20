@@ -1,4 +1,5 @@
 import Heading from "@theme/Heading";
+import LaptopHelix from "./LaptopHelix";
 import styles from "./styles.module.css";
 
 const links = [
@@ -35,54 +36,65 @@ export default function Homepage() {
   return (
     <div className={styles.page}>
       <section className={styles.hero}>
-        <Heading as="h1" className={styles.name}>
-          Yunguan Fu
-        </Heading>
-      </section>
+        <div className={styles.heroArt}>
+          <LaptopHelix />
+        </div>
+        <div className={styles.heroText}>
+          <Heading as="h1" className={styles.name}>
+            Yunguan Fu
+          </Heading>
+          <p className={styles.bio}>
+            Member of Technical Staff at{" "}
+            <a href="https://boltz.bio/" target="_blank" rel="noreferrer">
+              Boltz
+            </a>
+            .
+          </p>
+          <p className={styles.bio}>
+            Previously staff research engineer at{" "}
+            <a href="https://www.instadeep.com" target="_blank" rel="noreferrer">
+              InstaDeep
+            </a>{" "}
+            (acquired by{" "}
+            <a href="https://www.biontech.com/" target="_blank" rel="noreferrer">
+              BioNTech
+            </a>
+            ). Worked on protein design, including de novo nanoparticle designs (
+            <a
+              href="https://investors.biontech.de/system/files-encrypted/nasdaq_kms/assets/2025/10/01/10-29-46/AI%20Day%20-%202025.pdf"
+              target="_blank"
+              rel="noreferrer"
+            >
+              BioNTech AI Day 2025
+            </a>
+            ).
+          </p>
+          <p className={styles.bio}>
+            PhD on generative models for medical imaging at UCL.
+            <br />
+            Recent work includes a{" "}
+            <a href="https://github.com/mathpluscode/CineMA" target="_blank" rel="noreferrer">
+              foundation model for cine cardiac MR images
+            </a>
+            .
+          </p>
+          <p className={styles.bio}>
+            On the side, developing agent skills (
+            <a href="https://bib.tools/" target="_blank" rel="noreferrer">
+              bib.tools
+            </a>
+            ) for LaTeX bibliography verification.
+          </p>
 
-      <section className={styles.bioSection}>
-        <p className={styles.bio}>
-          Previously staff research engineer at{" "}
-          <a href="https://www.instadeep.com" target="_blank" rel="noreferrer">
-            InstaDeep
-          </a>{" "}
-          (acquired by BioNTech).
-          <br />
-          Recent work includes de novo nanoparticle designs (
-          <a
-            href="https://investors.biontech.de/system/files-encrypted/nasdaq_kms/assets/2025/10/01/10-29-46/AI%20Day%20-%202025.pdf"
-            target="_blank"
-            rel="noreferrer"
-          >
-            BioNTech AI Day 2025
-          </a>
-          ).
-        </p>
-        <p className={styles.bio}>
-          PhD on generative models for medical imaging at UCL.
-          <br />
-          Recent work includes a{" "}
-          <a href="https://github.com/mathpluscode/CineMA" target="_blank" rel="noreferrer">
-            foundation model for cine cardiac MR images
-          </a>
-          .
-        </p>
-        <p className={styles.bio}>
-          Currently developing agent skills (
-          <a href="https://bib.tools/" target="_blank" rel="noreferrer">
-            bib.tools
-          </a>
-          ) for LaTeX bibliography verification.
-        </p>
-      </section>
-
-      <section className={styles.cards}>
-        {links.map(({ label, href, icon }) => (
-          <a key={href} className={styles.card} href={href} target="_blank" rel="noreferrer">
-            <span className={styles.cardIcon}>{icon}</span>
-            <span className={styles.cardTitle}>{label}</span>
-          </a>
-        ))}
+          <nav className={styles.links} aria-label="Profiles">
+            {links.map(({ label, href, icon }) => (
+              <a key={href} className={styles.link} href={href} target="_blank" rel="noreferrer">
+                <span className={styles.linkIcon}>{icon}</span>
+                <span>{label}</span>
+              </a>
+            ))}
+          </nav>
+        </div>
       </section>
     </div>
   );
