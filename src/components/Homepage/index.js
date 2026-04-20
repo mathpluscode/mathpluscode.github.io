@@ -70,9 +70,7 @@ export default function Homepage() {
             ).
           </p>
           <p className={styles.bio}>
-            PhD on generative models for medical imaging at UCL.
-            <br />
-            Recent work includes a{" "}
+            PhD on machine learning for medical imaging at UCL, with recent work on a{" "}
             <a href="https://github.com/mathpluscode/CineMA" target="_blank" rel="noreferrer">
               foundation model for cine cardiac MR images
             </a>
