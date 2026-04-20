@@ -200,14 +200,7 @@ export default function LaptopHelix() {
           <path d="M 832 746 Q 500 752 170 746" />
           <path d="M 170 746 L 270 602" />
         </g>
-        <g
-          stroke="#141414"
-          fill="none"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="3.2"
-          filter="url(#j3)"
-        >
+        <g stroke="#141414" fill="none" strokeLinecap="round" strokeLinejoin="round" strokeWidth="5" filter="url(#j3)">
           <path d={KEYS_D} />
         </g>
       </g>
