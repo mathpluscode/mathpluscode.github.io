@@ -4,7 +4,7 @@
 
 
 <meta charset="utf-8">
-<title>Laptop · Helix v9</title>
+<title>Laptop · Helix</title>
 <style>
   html, body { margin: 0; padding: 0; height: 100%; background: #bfd4a6;
     display: grid; place-items: center; }
@@ -27,15 +27,13 @@
         <feTurbulence type="fractalNoise" baseFrequency="0.015" numOctaves="2" seed="1"></feTurbulence>
         <feDisplacementMap in="SourceGraphic" scale="1.0"></feDisplacementMap>
       </filter>
-      <filter id="grain"><feTurbulence baseFrequency="1.6" numOctaves="2" seed="3"></feTurbulence>
-        <feColorMatrix values="0 0 0 0 0.12  0 0 0 0 0.14  0 0 0 0 0.08  0 0 0 0.06 0"></feColorMatrix></filter>
     </defs>
     <rect width="960" height="1000" fill="#bfd4a6"></rect>
 
     <!-- Whitish hand-drawn rectangle behind the laptop (no outline, larger than the device) -->
     <g transform="translate(-40 0) rotate(3 500 500)">
       <path d="M 140 160 L 850 152 L 858 830 L 132 822 Z"
-            fill="#f3ecdc" filter="url(#j1)"></path>
+            fill="#f3ecdc"></path>
     </g>
 
     <!-- LAPTOP (screen + springs + keyboard): tilted anti-clockwise slightly -->
@@ -114,8 +112,6 @@ g.innerHTML = `
   <g filter="url(#j2)"><path d="${R_}" fill="none" stroke="#141414" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></g>
 `;
 
-// Keys: grid lines following keyboard trapezoid perspective.
-// Trapezoid corners: TL(270,602) TR(732,604) BR(832,746) BL(170,746)
 (function drawKeys() {
   const TL = [270, 602], TR = [732, 604], BR = [832, 746], BL = [170, 746];
   const cols = 9;
@@ -141,20 +137,6 @@ g.innerHTML = `
     const endTrim   = rand() * 0.06;
     const uStart = inset + startTrim;
     const uEnd   = (1 - inset) + endTrim;
-    let line = '';
-    for (let k = 0; k <= samples; k++) {
-      const u = uStart + (k / samples) * (uEnd - uStart);
-      // Variable wave: amplitude wanders per line, phase shifts per sample
-      const amp = 2.2 + rand() * 1.5;
-      const wave = Math.sin(k * 1.1 + v*9 + rand()*0.4) * amp;
-      const p = j([P(u, v)[0], P(u, v)[1] + wave], 1.8);
-      line += (k === 0 ? `M ${p[0].toFixed(1)} ${p[1].toFixed(1)} `
-                       : k === 1 ? `Q `
-                       : ` , `);
-      if (k > 0) line += `${p[0].toFixed(1)} ${p[1].toFixed(1)} `;
-    }
-    // Simpler: build with smooth Q curves through every other point
-    line = '';
     const pts = [];
     for (let k = 0; k <= samples; k++) {
       const u = uStart + (k / samples) * (uEnd - uStart);
@@ -162,7 +144,7 @@ g.innerHTML = `
       const wave = Math.sin(k * 1.15 + v*9) * amp + rand()*1.2;
       pts.push(j([P(u, v)[0], P(u, v)[1] + wave], 1.6));
     }
-    line = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)} `;
+    let line = `M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)} `;
     for (let k = 1; k < pts.length - 1; k++) {
       const mx = (pts[k][0] + pts[k+1][0]) / 2;
       const my = (pts[k][1] + pts[k+1][1]) / 2;
@@ -202,11 +184,8 @@ g.innerHTML = `
     }
   }
 
-  // Space bar removed.
-
   document.getElementById('keys').innerHTML = `<path d="${d}"/>`;
 })();
 </script>
 
-
-<grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></body></html>
+</body></html>
