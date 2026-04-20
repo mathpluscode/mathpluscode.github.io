@@ -36,6 +36,41 @@
   height: auto;
 }
 
+.spring {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.laptopHelix:hover .spring {
+  animation: jiggle 0.35s ease-in-out infinite;
+}
+
+.laptopHelix:hover .spring:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+@keyframes jiggle {
+  0%,
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+  25% {
+    transform: rotate(-4deg) translateY(-2px);
+  }
+  50% {
+    transform: rotate(0deg) translateY(0);
+  }
+  75% {
+    transform: rotate(4deg) translateY(-2px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .laptopHelix:hover .spring {
+    animation: none;
+  }
+}
+
 .heroText {
   display: flex;
   flex-direction: column;

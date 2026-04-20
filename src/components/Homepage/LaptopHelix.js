@@ -172,7 +172,7 @@ export default function LaptopHelix() {
         </g>
 
         <g>
-          <g filter="url(#j2)">
+          <g filter="url(#j2)" className={styles.spring}>
             <path
               d={LEFT_SPRING}
               fill="none"
@@ -182,7 +182,7 @@ export default function LaptopHelix() {
               strokeLinejoin="round"
             />
           </g>
-          <g filter="url(#j2)">
+          <g filter="url(#j2)" className={styles.spring}>
             <path
               d={RIGHT_SPRING}
               fill="none"
