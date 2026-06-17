@@ -48,6 +48,18 @@ export default function Homepage() {
             <a href="https://boltz.bio/" target="_blank" rel="noreferrer">
               Boltz
             </a>
+            , working on protein design. Check out{" "}
+            <a href="https://boltz.bio/boltzprot1-technical-report.pdf" target="_blank" rel="noreferrer">
+              BoltzProt-1
+            </a>{" "}
+            and{" "}
+            <a href="https://boltz.bio/boltzmol1-technical-report.pdf" target="_blank" rel="noreferrer">
+              BoltzMol-1
+            </a>
+            , and the{" "}
+            <a href="https://boltz.bio/api" target="_blank" rel="noreferrer">
+              Boltz API
+            </a>
             .
           </p>
           <p className={styles.bio}>
@@ -71,19 +83,11 @@ export default function Homepage() {
           </p>
           <p className={styles.bio}>
             PhD on machine learning for medical imaging at UCL, with recent work on a{" "}
-            <a href="https://github.com/mathpluscode/CineMA" target="_blank" rel="noreferrer">
+            <a href="https://www.nature.com/articles/s43856-026-01636-0" target="_blank" rel="noreferrer">
               foundation model for cine cardiac MR images
             </a>
             .
           </p>
-          <p className={styles.bio}>
-            On the side, developing agent skills (
-            <a href="https://bib.tools/" target="_blank" rel="noreferrer">
-              bib.tools
-            </a>
-            ) for LaTeX bibliography verification.
-          </p>
-
           <nav className={styles.links} aria-label="Profiles">
             {links.map(({ label, href, icon }) => (
               <a key={href} className={styles.link} href={href} target="_blank" rel="noreferrer">
